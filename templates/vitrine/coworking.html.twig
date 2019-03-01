@@ -1,0 +1,26 @@
+{# templates/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Coworking{% endblock %}
+
+{% block body %}
+    <section class="tm-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+                    <div class="tm-content-box">
+                        <img src="{{ asset('img/logo/logo-coworking.png')}}" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Co-working</h4>
+                        <p class="tm-margin-b-20">
+                            Un espace de  bureaux partagés ou "Coworking" : <br>
+                            Un tiers lieu convivial qui facilite les coopérations, mutualise les moyens et le partage de compétences des travailleurs indépendants, des télétravailleurs et des porteurs de projets.
+                        </p>
+                        <a href="#" class="tm-btn text-uppercase">Detail</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
