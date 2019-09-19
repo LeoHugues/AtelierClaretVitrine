@@ -20,7 +20,7 @@ class VitrineController extends AbstractController
      */
     public function home()
     {
-        $request = new Request(
+       /* $request = new Request(
             'GET',
             'http://94.125.163.95/open_api/v1/events?page=1&per_page=4',
             [
@@ -33,9 +33,9 @@ class VitrineController extends AbstractController
 
         $response = $client->send($request);
 
-        $jsonData = $response->getBody()->getContents();
+        $jsonData = $response->getBody()->getContents();*/
 
-        return $this->render('vitrine/home.html.twig', json_decode($jsonData, true));
+        return $this->render('vitrine/home.html.twig');
     }
 
     /**

@@ -1,0 +1,91 @@
+{# templates/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <section class="tm-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                    <h1 class="tm-gold-text tm-title tm-teaser">"Construire l'avenir plutôt que chercher à le prédire"</h1>
+                    <p class="tm-subtitle">L’Atelier de Claret est un « Tiers lieu » ou espace coopératif à la fois lieu de travail partagé (Coworking), espace de fabrication numérique (FabLab et/ou Maker Place) et plateforme de formation favorisant l'esprit entrepreneurial, la création d’activités, l’employabilité par l'innovation. Il organise des évènements et des formations dans les domaines du numérique et des nouvelles technologies et/ou sur des thématiques innovantes et éco-responsables avec une promesse : "Construire l'avenir plutôt que chercher à le prédire" »
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+                    <div class="tm-content-box">
+                        <img src="{{ asset('img/logo/logo-coworking.png')}}" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Co-working</h4>
+                        <p class="tm-margin-b-20">
+                            Un espace de  bureaux partagés ou "Coworking" : <br>
+                            Un tiers lieu convivial qui facilite les coopérations, mutualise les moyens et le partage de compétences des travailleurs indépendants, des télétravailleurs et des porteurs de projets.
+                        </p>
+                        <a href="{{ path('app_coworking') }}" class="tm-btn text-uppercase">En savoir plus</a>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+                    <div class="tm-content-box">
+                        <img src="{{ asset('img/logo/logo-fablab.png')}}" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">FabLab</h4>
+                        <p class="tm-margin-b-20">
+                            Un laboratoire de fabrication numérique ou "Fablab" :<br>
+                            Un laboratoire de fabrication numérique coopératif qui organise des événements, des ateliers et des formations utilisant le numérique et les nouvelles technologies.
+                        </p>
+                        <a href="{{ path('app_fablab') }}" class="tm-btn text-uppercase">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+
+                    <div class="tm-content-box">
+                        <img src="{{ asset('img/logo/logo-formation.png')}}" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Formation</h4>
+                        <p class="tm-margin-b-20">
+                            Une plateforme d'outils de formation innovants ou "Digital Learning" :<br>
+                            Une plateforme d'outils de formation et une passerelle vers l'appropriation du numérique et des technologies de demain.
+                        </p>
+                        <a href="{{ path('app_formation') }}" class="tm-btn text-uppercase">En savoir plus</a>
+                    </div>
+
+                </div>
+            </div> <!-- row -->
+
+            <div class="row tm-margin-t-big">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                    <div class="tm-2-col-right">
+                        <div class="row tm-2-rows-md-down-1 tm-margin-t-mid">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <h1 class="tm-gold-text tm-title tm-margin-b-30">Prochainement à l'Atelier de Claret :</h1>
+
+                                    <div class="media tm-related-post col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                        <div class="media-left media-middle">
+                                            <a href="#" target="_blank">
+                                                <img class="media-object" src="" alt="Generic placeholder image">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#"><h4 class="media-heading tm-gold-text tm-margin-b-15">mi casa es tu casa</h4></a>
+                                            <p class="tm-small-font tm-media-description">
+                                               lorem ipsum<br>
+                                                <label class="tm-gold-text font-weight-bold">Date : </label> {{ "now"|date("d/m/Y à H:i", "Europe/Paris") }}
+                                            </p><br>
+                                            <a href="#" class="tm-btn text-uppercase" target="_blank">Detail</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- row -->
+
+        </div>
+    </section>
+{% endblock %}
