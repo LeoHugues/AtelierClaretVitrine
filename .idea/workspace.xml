@@ -2,47 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/checkout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vitrine/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/templatemo-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/Bandeau-panorama-Atelier.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/classic-pattern-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo/logo-Atelier_am.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo/logo-asso-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo/logo-asso-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo/logo-coworking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo/logo-fablab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo/logo-formation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-about-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-blog-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-contact-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-home-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-100x100-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-100x100-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-100x100-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-100x100-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-100x100-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-100x100-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-1010x336-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-240x120-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-240x120-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-240x120-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-310x180-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-310x180-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-310x180-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-310x180-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/tm-img-660x330-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery-1.11.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/VitrineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VitrineController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/vitrine/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,7 +84,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/vendor/symfony/panther" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-link" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
@@ -174,7 +144,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/easycorp/easy-log-handler" />
-      <path value="$PROJECT_DIR$/vendor/facebook/webdriver" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
@@ -182,6 +151,13 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1QuaK7sPQ9cRxpeULOttUUxIVfG" />
@@ -190,22 +166,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/vitrine" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/templates/vitrine" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
       <recent name="$PROJECT_DIR$/templates/vitrine" />
+      <recent name="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/public/img/logo" />
       <recent name="$PROJECT_DIR$/public/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/templates/vitrine" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -253,7 +229,10 @@
       <workItem from="1568622873589" duration="2928000" />
       <workItem from="1568644093307" duration="1355000" />
       <workItem from="1568797143706" duration="498000" />
-      <workItem from="1568881348038" duration="22572000" />
+      <workItem from="1568881348038" duration="24707000" />
+      <workItem from="1569246915736" duration="31000" />
+      <workItem from="1569246963609" duration="4121000" />
+      <workItem from="1569325244479" duration="12312000" />
     </task>
     <servers />
   </component>

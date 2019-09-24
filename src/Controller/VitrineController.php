@@ -70,6 +70,15 @@ class VitrineController extends AbstractController
         return $this->render('vitrine/formation.html.twig');
     }
 
+
+    /**
+     * @Route("/Blog", name="app_blog")
+     */
+    public function blog()
+    {
+        return $this->render('vitrine/blog.html.twig');
+    }
+
     /**
      * @Route("/Agenda", name="app_agenda")
      */

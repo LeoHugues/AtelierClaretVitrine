@@ -1,0 +1,23 @@
+easy_admin:
+    entities:
+        Tag:
+            class: App\Entity\Tag
+        BlogArticle:
+            class: App\Entity\BlogArticle
+            form:
+                fields:
+                    - {property: 'title', type: 'text'}
+                    - {property: 'text', type: 'text_editor'}
+                    - {property: 'tags', type: 'easyadmin_autocomplete'}
+                    - {property: 'imgFile', type: 'file'}
+                    - {property: 'publicationDate', type: 'date'}
+
+            list:
+                fields: ['id', 'title', 'publicationDate', { property: 'filename', type: 'image', base_path: '/images/blog' }]
+
+            show:
+                fields:
+                    - { property: 'filename', type: 'image', base_path: '/images/blog' }
+
+
+    site_name: 'Atelier - Administration'
