@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vegefoods/vegefoods/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/vegefoods/vegefoods/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vegefoods/vegefoods/images/bg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/vegefoods/vegefoods/images/bg_2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/VitrineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VitrineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BlogArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BlogArticle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/vitrine/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -166,22 +163,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/vitrine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/vitrine" />
-      <recent name="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/public/img/logo" />
-      <recent name="$PROJECT_DIR$/public/img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates/vitrine" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
+      <recent name="$PROJECT_DIR$/templates/vitrine" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/public/img/logo" />
+      <recent name="$PROJECT_DIR$/public/img" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -232,7 +229,10 @@
       <workItem from="1568881348038" duration="24707000" />
       <workItem from="1569246915736" duration="31000" />
       <workItem from="1569246963609" duration="4121000" />
-      <workItem from="1569325244479" duration="12312000" />
+      <workItem from="1569325244479" duration="13032000" />
+      <workItem from="1569410067881" duration="5434000" />
+      <workItem from="1569489117475" duration="21697000" />
+      <workItem from="1569572427102" duration="24139000" />
     </task>
     <servers />
   </component>

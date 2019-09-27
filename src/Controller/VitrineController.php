@@ -20,22 +20,17 @@ class VitrineController extends AbstractController
      */
     public function home()
     {
-       /* $request = new Request(
-            'GET',
-            'http://94.125.163.95/open_api/v1/events?page=1&per_page=4',
-            [
-                'Authorization' => 'Token token=4L2svvAuqGmX93kdF5rrLK3k',
-                'Accept' => 'application/json',
-            ]
-        );
+        $em = $this->getDoctrine()->getManager();
 
-        $client = new Client();
+        $slides     = $em->getRepository('App:SlideContrib')->findBy(['published' => true], ['priority' => 'ASC']);
+        $testimony  = $em->getRepository('App:Testimony')->findAll();
+        $partner    = $em->getRepository('App:Partner')->findAll();
 
-        $response = $client->send($request);
-
-        $jsonData = $response->getBody()->getContents();*/
-
-        return $this->render('vitrine/home.html.twig');
+        return $this->render('vitrine/home.html.twig', array(
+            'slides'        => $slides,
+            'testimonies'   => $testimony,
+            'partners'      => $partner
+        ));
     }
 
     /**

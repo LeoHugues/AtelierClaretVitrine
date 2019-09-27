@@ -5,9 +5,12 @@ vich_uploader:
         blog_image:
             uri_prefix: /images/blog
             upload_destination: '%kernel.project_dir%/public/images/blog'
-
-
-    #mappings:
-    #    products:
-    #        uri_prefix: /images/products
-    #        upload_destination: '%kernel.project_dir%/public/images/products'
+        home_carousel_image:
+            uri_prefix: /images/home/carousel
+            upload_destination: '%kernel.project_dir%/public/images/home/carousel'
+        home_testimony_image:
+            uri_prefix: /images/home/testimony
+            upload_destination: '%kernel.project_dir%/public/images/home/testimony'
+        home_partner_image:
+            uri_prefix: /images/home/partner
+            upload_destination: '%kernel.project_dir%/public/images/home/partner'

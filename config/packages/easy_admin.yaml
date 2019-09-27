@@ -1,23 +1,123 @@
 easy_admin:
+    site_name: '<img style="max-width:15%;" src="/vegefoods/vegefoods/images/logo-Atelier_am.PNG"/><span style="margin-left: 15px;">Administration du site</span>'
+
+    user:
+        name_property_path: 'email'
+        display_avatar: false
+
+    design:
+        menu:
+            - { label: "Page d'accueil"}
+            - { entity: "SlideContrib", label: 'Les slides', icon: 'picture-o'}
+            - { entity: "Testimony", label: 'Les irréductibles', icon: 'weixin'}
+            - { entity: "Partner", label: 'Les partenaires', icon: 'users'}
+            - { label: 'Le Blog'}
+            - { entity: 'BlogArticle', label: 'Nos articles', icon: 'book'}
+            - { entity: 'BlogArticle', parms: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
+            - { entity: 'Tag', parms: { action: 'new' }, label: 'Ajouter une catégorie', icon: 'plus'}
+            - { label: 'Gestion utilisateur'}
+            - { entity: 'User', label: 'Utilisateurs', icon: 'user'}
+            - { label: 'Raccourci'}
+            - { label: 'Accéder au Site', route: 'app_home', icon: 'external-link-square', target: '_blank'}
+        brand_color: '#aa3e98'
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+
     entities:
-        Tag:
-            class: App\Entity\Tag
+        SlideContrib:
+            class: App\Entity\SlideContrib
+            label: "Slide"
+            form:
+                title: "Ajouter une slide"
+                fields:
+                    - { property: 'title', type: 'text', label: 'Titre de la slide' }
+                    - { property: 'legend', type: 'text', label: 'Légende' }
+                    - { property: 'labelButton', type: 'text', label: 'Texte du bouton' }
+                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/carousel' }
+                    - { property: 'priority', type: 'integer', label: 'Priorité'}
+                    - { property: 'published', label: 'Publier'}
+            list:
+                title: "Les Slides"
+                fields: ['id', 'title', 'priority', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/carousel' }, 'published']
+
+        Testimony:
+            class: App\Entity\Testimony
+            label: "Les Irréductibles"
+            form:
+                title: "Ajouter un Irréductibles"
+                fields:
+                    - { property: 'fullname', type: 'text', label: 'Nom et prénom' }
+                    - { property: 'position', type: 'text', label: 'Métier / Position' }
+                    - { property: 'text', type: 'text', label: 'citation' }
+                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/testimony'}
+            list:
+                title: "Les Irreductibles"
+                fields: ['id', 'fullname', 'position', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/testimony' }]
+            edit:
+                title: "Modifier un Irréductible"
+
+        Partner:
+            class: App\Entity\Partner
+            label: "Les Partenaires"
+            form:
+                title: "Ajouter un partenaire"
+                fields:
+                    - { property: 'link', type: 'text', label: 'Lien de redirection' }
+                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/partner'}
+            list:
+                title: "Les Partenaires"
+                fields: ['id', 'link', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/partner' }]
+
         BlogArticle:
             class: App\Entity\BlogArticle
+            label: "Article"
             form:
+                title: "Ajouter un article"
                 fields:
-                    - {property: 'title', type: 'text'}
-                    - {property: 'text', type: 'text_editor'}
-                    - {property: 'tags', type: 'easyadmin_autocomplete'}
-                    - {property: 'imgFile', type: 'file'}
-                    - {property: 'publicationDate', type: 'date'}
+                    - { property: 'title', type: 'text'}
+                    - { property: 'text', type: 'text_editor'}
+                    - { property: 'tags', type: 'easyadmin_autocomplete'}
+                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/blog'}
+                    - { property: 'publicationDate', type: 'date'}
 
             list:
-                fields: ['id', 'title', 'publicationDate', { property: 'filename', type: 'image', base_path: '/images/blog' }]
+                title: "Article les plus récent"
+                fields: ['id', 'title', 'publicationDate', { property: 'filename', type: 'image', height: 'lg', base_path: '/images/blog' }]
 
-            show:
+            edit:
+                title: "Modifier l'article"
+
+        Tag:
+            label: "Catégorie"
+            class: App\Entity\Tag
+            form:
+              fields:
+                - { property: 'name', type: 'text' }
+
+        User:
+            class: App\Entity\User
+            controller: App\Controller\UserController
+            label: 'Utilisateur'
+            list:
+                title: "Utilisateurs les plus récent"
+            form:
+                title: "Ajouter un utilisateur"
                 fields:
-                    - { property: 'filename', type: 'image', base_path: '/images/blog' }
-
-
-    site_name: 'Atelier - Administration'
+                    - { property: 'email' }
+                    - { property: 'email' }
+                    - property: 'password'
+                      type: 'repeated'
+                      type_options:
+                          type: Symfony\Component\Form\Extension\Core\Type\PasswordType
+                          required: false
+                          first_options: { label: 'Mot de passe' }
+                          second_options: { label: 'Confirmer le mot de passe' }
+                          invalid_message: fos_user.password.mismatch
+                    - property: 'roles'
+                      type: 'choice'
+                      type_options:
+                          mapped: true
+                          expanded: true
+                          multiple: true
+                          choices: { 'Administrateur': 'ROLE_ADMIN' }
+                edit: "Editer un utilisateur"
