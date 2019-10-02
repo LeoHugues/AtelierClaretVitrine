@@ -1,26 +1,178 @@
 {# templates/blog/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Fablab{% endblock %}
+{% block title %}FabLab{% endblock %}
 
 {% block body %}
-    <section class="tm-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
-                    <div class="tm-content-box">
-                        <img src="{{ asset('img/logo/logo-fablab.png')}}" alt="Image" class="tm-margin-b-20 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">FabLab</h4>
-                        <p class="tm-margin-b-20">
-                            Un laboratoire de fabrication numérique ou "Fablab" :<br>
-                            Un laboratoire de fabrication numérique coopératif qui organise des événements, des ateliers et des formations utilisant le numérique et les nouvelles technologies.
-                        </p>
-                        <a href="#" class="tm-btn text-uppercase">Read More</a>
-                    </div>
-
+    <div class="hero-wrap hero-bread" style="background-image: url('{{asset(['images/fablab/', contrib.imageHeader]|join)}}');">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-0 bread">FabLab</h1>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset(['images/fablab/', contrib.imageVideo]|join )}});">
+                    <a href="{{ contrib.videoLink }}?autoplay=1&rel=0" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+                        <span class="icon-play"></span>
+                    </a>
+                </div>
+                <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+                    <div class="heading-section-bold mb-4 mt-md-5">
+                        <div class="ml-md-0">
+                            <h2 class="mb-4">{{ contrib.titlePres }}</h2>
+                        </div>
+                    </div>
+                    <div class="pb-md-5">
+                        {{ contrib.textPres|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="sidebar-box ftco-animate">
+                        <h2 class="heading">Derniers articles en lien avec le FabLab</h2>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url({{asset('vegefoods/vegefoods/images/image_1.jpg')}});"></a>
+                            <div class="text">
+                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url({{asset('vegefoods/vegefoods/images/image_2.jpg')}});"></a>
+                            <div class="text">
+                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url({{asset('vegefoods/vegefoods/images/image_3.jpg')}});"></a>
+                            <div class="text">
+                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({{asset('images/fablab/coworking-banner.jpg')}});">
+        <div class="container">
+            <div class="row justify-content-center py-5">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="100">0</strong><strong class="number"> M²</strong>
+                                    <span>De Bureaux partagés</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="12">0</strong>
+                                    <span>Poste de travail</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="1000">0</strong>
+                                    <span>Litre de café</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="25">0</strong>
+                                    <span>Degrés celsius</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section testimony-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section ftco-animate text-center">
+                    <h2 class="mb-4">Les Coworkers</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+                </div>
+            </div>
+            <div class="row ftco-animate">
+                <div class="col-md-12">
+                    <div class="carousel-testimony owl-carousel">
+                        {% for testimony in testimonies %}
+                            <div class="item">
+                                <div class="testimony-wrap p-4 pb-5">
+                                    <div class="user-img mb-5" style="background-image: url({{ asset(['images/home/testimony/', testimony.image]|join) }})">
+                                        <span class="quote d-flex align-items-center justify-content-center">
+                                          <i class="icon-quote-left"></i>
+                                        </span>
+                                    </div>
+                                    <div class="text text-center">
+                                        <p class="mb-5 pl-4 line">{{ testimony.text }}</p>
+                                        <p class="name">{{ testimony.fullName }}</p>
+                                        <span class="position">{{ testimony.position }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+        <div class="container py-4">
+            <div class="row d-flex justify-content-center py-5">
+                <div class="col-md-6">
+                    <h2 style="font-size: 22px;" class="mb-0">Inscris-toi à notre NewsLetter</h2>
+                    <span>Pour être tenu au courant des dernières news de l'Atelier</span>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <form action="#" class="subscribe-form">
+                        <div class="form-group d-flex">
+                            <input type="text" class="form-control" placeholder="Adresse email">
+                            <input type="submit" value="S'abonner" class="submit px-3">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

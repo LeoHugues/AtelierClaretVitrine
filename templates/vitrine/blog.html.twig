@@ -1,27 +1,118 @@
 {# templates/blog/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Fablab{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
-    <section class="tm-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
-                    <div class="tm-content-box">
-                        <img src="{{ asset('img/logo/logo-fablab.png')}}" alt="Image" class="tm-margin-b-20 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">FabLab</h4>
-                        <p class="tm-margin-b-20">
-                            Un laboratoire de fabrication numérique ou "Fablab" :<br>
-                            Un laboratoire de fabrication numérique coopératif qui organise des événements, des ateliers et des formations utilisant le numérique et les nouvelles technologies.
+    <div class="hero-wrap hero-bread" style="background-image: url('{{asset('vegefoods/vegefoods/images/bg_1.jpg')}}');">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-0 bread">Blog</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="ftco-section ftco-degree-bg">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-lg-8 ftco-animate">
+                    {% for blog in blogs %}
+                        <h2 class="mb-3 mt-5">{{ blog.title }}</h2>
+                        <p>
+                            <img src="{{asset(['/images/blog/',blog.filename]|join)}}" alt="" class="img-fluid">
                         </p>
-                        <a href="#" class="tm-btn text-uppercase">Read More</a>
+                        {{ blog.text|raw }}
+                        <div class="tag-widget post-tag-container mb-5 mt-5">
+                            <div class="tagcloud">
+                                {% for tag in blog.tags %}
+                                    <a href="#" class="tag-cloud-link">{{ tag.name }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div> <!-- .col-md-8 -->
+                <div class="col-lg-4 sidebar ftco-animate">
+                    <div class="sidebar-box">
+                        <form action="#" class="search-form">
+                            <div class="form-group">
+                                <span class="icon ion-ios-search"></span>
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading">Categories</h3>
+                        <ul class="categories">
+                            <li><a href="#">Vegetables <span>(12)</span></a></li>
+                            <li><a href="#">Fruits <span>(22)</span></a></li>
+                            <li><a href="#">Juice <span>(37)</span></a></li>
+                            <li><a href="#">Dries <span>(42)</span></a></li>
+                        </ul>
                     </div>
 
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading">Recent Blog</h3>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url({{asset('vegefoods/vegefoods/images/image_1.jpg')}});"></a>
+                            <div class="text">
+                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url({{asset('vegefoods/vegefoods/images/image_2.jpg')}});"></a>
+                            <div class="text">
+                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url({{asset('vegefoods/vegefoods/images/image_3.jpg')}});"></a>
+                            <div class="text">
+                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2019</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading">Tag Cloud</h3>
+                        <div class="tagcloud">
+                            <a href="#" class="tag-cloud-link">fruits</a>
+                            <a href="#" class="tag-cloud-link">tomatoe</a>
+                            <a href="#" class="tag-cloud-link">mango</a>
+                            <a href="#" class="tag-cloud-link">apple</a>
+                            <a href="#" class="tag-cloud-link">carrots</a>
+                            <a href="#" class="tag-cloud-link">orange</a>
+                            <a href="#" class="tag-cloud-link">pepper</a>
+                            <a href="#" class="tag-cloud-link">eggplant</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading">Paragraph</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                    </div>
                 </div>
 
             </div>
         </div>
-    </section>
+    </section> <!-- .section -->
 {% endblock %}

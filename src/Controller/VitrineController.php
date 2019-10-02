@@ -8,8 +8,6 @@
 
 namespace App\Controller;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -46,7 +44,15 @@ class VitrineController extends AbstractController
      */
     public function coworking()
     {
-        return $this->render('vitrine/coworking.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $testimony  = $em->getRepository('App:Testimony')->findAll();
+        $contrib    = $em->getRepository('App:CoworkingContrib')->findOneBy(['id' => 2]);
+
+        return $this->render('vitrine/coworking.html.twig', array(
+            'testimonies'   => $testimony,
+            'contrib'       => $contrib
+        ));
     }
 
     /**
@@ -54,7 +60,15 @@ class VitrineController extends AbstractController
      */
     public function fablab()
     {
-        return $this->render('vitrine/fablab.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $testimony  = $em->getRepository('App:Testimony')->findAll();
+        $contrib    = $em->getRepository('App:FablabContrib')->findOneBy(['id' => 2]);
+
+        return $this->render('vitrine/fablab.html.twig', array(
+            'testimonies'   => $testimony,
+            'contrib'       => $contrib
+        ));
     }
 
     /**
@@ -62,7 +76,15 @@ class VitrineController extends AbstractController
      */
     public function formation()
     {
-        return $this->render('vitrine/formation.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $testimony  = $em->getRepository('App:Testimony')->findAll();
+        $contrib    = $em->getRepository('App:FormationContrib')->findOneBy(['id' => 2]);
+
+        return $this->render('vitrine/formation.html.twig', array(
+            'testimonies'   => $testimony,
+            'contrib'       => $contrib
+        ));
     }
 
 
@@ -71,7 +93,11 @@ class VitrineController extends AbstractController
      */
     public function blog()
     {
-        return $this->render('vitrine/blog.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $blogs = $em->getRepository('App:BlogArticle')->findBy([], ['publicationDate' => 'DESC']);
+
+        return $this->render('vitrine/blog.html.twig', array('blogs' => $blogs));
     }
 
     /**

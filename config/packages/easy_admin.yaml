@@ -9,12 +9,16 @@ easy_admin:
         menu:
             - { label: "Page d'accueil"}
             - { entity: "SlideContrib", label: 'Les slides', icon: 'picture-o'}
-            - { entity: "Testimony", label: 'Les irréductibles', icon: 'weixin'}
-            - { entity: "Partner", label: 'Les partenaires', icon: 'users'}
+            - { entity: "Testimony", label: 'Les irréductibles', icon: 'users'}
+            - { entity: "Partner", label: 'Les partenaires', icon: 'weixin'}
+            - { label: 'Pages Activités'}
+            - { entity: 'CoworkingContrib', params: { action: 'edit', id: 2 },  label: 'Page Coworking', icon: 'coffee'}
+            - { entity: 'FablabContrib', params: { action: 'edit', id: 2 }, label: 'Page FabLab', icon: 'wrench'}
+            - { entity: 'FormationContrib', params: { action: 'edit', id: 2 }, label: 'Page Formation', icon: 'certificate'}
             - { label: 'Le Blog'}
             - { entity: 'BlogArticle', label: 'Nos articles', icon: 'book'}
-            - { entity: 'BlogArticle', parms: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
-            - { entity: 'Tag', parms: { action: 'new' }, label: 'Ajouter une catégorie', icon: 'plus'}
+            - { entity: 'Tag', params: { action: 'new' }, label: 'Ajouter une catégorie', icon: 'tags'}
+            - { entity: 'BlogArticle', params: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
             - { label: 'Gestion utilisateur'}
             - { entity: 'User', label: 'Utilisateurs', icon: 'user'}
             - { label: 'Raccourci'}
@@ -68,6 +72,48 @@ easy_admin:
                 title: "Les Partenaires"
                 fields: ['id', 'link', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/partner' }]
 
+        CoworkingContrib:
+            class: App\Entity\CoworkingContrib
+            label: "Page coworking"
+            disabled_actions: ['search', 'delete', 'new', 'list']
+            form:
+                title: "Mettre à jour la page coworking"
+                fields:
+                    - { property: 'imageHeaderFile', type: 'vich_image', base_path: '/images/coworking', label: "Image d'entête"}
+                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
+                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/coworking', label: "Image vidéo"}
+                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
+                    - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
+                    - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+
+        FablabContrib:
+            class: App\Entity\FablabContrib
+            label: "Page FabLab"
+            disabled_actions: ['search', 'delete', 'list', 'new']
+            form:
+                title: "Mettre à jour la page FabLab"
+                fields:
+                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/fablab', label: "Image d'entête"}
+                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
+                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/fablab', label: "Image vidéo"}
+                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
+                    - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
+                    - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+
+        FormationContrib:
+            class: App\Entity\FormationContrib
+            label: "Page Formation"
+            disabled_actions: ['search', 'delete', 'list', 'new']
+            form:
+                title: "Mettre à jour la page Formation"
+                fields:
+                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête"}
+                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
+                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/formation', label: "Image vidéo"}
+                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
+                    - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
+                    - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+
         BlogArticle:
             class: App\Entity\BlogArticle
             label: "Article"
@@ -103,7 +149,6 @@ easy_admin:
             form:
                 title: "Ajouter un utilisateur"
                 fields:
-                    - { property: 'email' }
                     - { property: 'email' }
                     - property: 'password'
                       type: 'repeated'
