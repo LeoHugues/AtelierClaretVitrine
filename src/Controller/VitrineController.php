@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -90,12 +91,16 @@ class VitrineController extends AbstractController
 
     /**
      * @Route("/Blog", name="app_blog")
+     * @Route("/Blog/{tag}", name="app_blog")
      */
-    public function blog()
+    public function blog(Request $request, $tag)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $blogs = $em->getRepository('App:BlogArticle')->findBy([], ['publicationDate' => 'DESC']);
+        if ($tag) {
+            $blogs = $em->getRepository('App:BlogArticle')->findBy(['tags'], ['publicationDate' => 'DESC']);
+        }
+
 
         return $this->render('vitrine/blog.html.twig', array('blogs' => $blogs));
     }

@@ -79,7 +79,7 @@ easy_admin:
             form:
                 title: "Mettre à jour la page coworking"
                 fields:
-                    - { property: 'imageHeaderFile', type: 'vich_image', base_path: '/images/coworking', label: "Image d'entête"}
+                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/coworking', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/coworking', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }

@@ -24,7 +24,7 @@
                     {% for blog in blogs %}
                         <h2 class="mb-3 mt-5">{{ blog.title }}</h2>
                         <p>
-                            <img src="{{asset(['/images/blog/',blog.filename]|join)}}" alt="" class="img-fluid">
+                            <img src="{{asset(['/images/blog/', blog.filename]|join)}}" alt="" class="img-fluid">
                         </p>
                         {{ blog.text|raw }}
                         <div class="tag-widget post-tag-container mb-5 mt-5">
