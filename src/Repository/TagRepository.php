@@ -19,10 +19,12 @@ class TagRepository extends ServiceEntityRepository
         parent::__construct($registry, Tag::class);
     }
 
-    public function findByTag(Tag $tag) {
+    public function findArticleByTagQuery($idtag) {
         return $this->createQueryBuilder('t')
-            ->andWhere('(:tag) IN t.tags')
-            ->setParameter('tags', $tag);
+            ->select('t.articles')
+            ->from('App:Tag', 'tag')
+            ->andWhere('tag.id = (:tagid)')
+            ->setParameter('tagid', $idtag);
     }
 
     // /**

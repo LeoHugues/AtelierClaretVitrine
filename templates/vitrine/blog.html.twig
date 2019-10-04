@@ -18,10 +18,8 @@
     <section class="ftco-section ftco-degree-bg">
         <div class="container">
             <div class="row">
-
-
                 <div class="col-lg-8 ftco-animate">
-                    {% for blog in blogs %}
+                    {% for blog in pagination %}
                         <h2 class="mb-3 mt-5">{{ blog.title }}</h2>
                         <p>
                             <img src="{{asset(['/images/blog/', blog.filename]|join)}}" alt="" class="img-fluid">
@@ -35,6 +33,7 @@
                             </div>
                         </div>
                     {% endfor %}
+                    {{ knp_pagination_render(pagination) }}
                 </div> <!-- .col-md-8 -->
                 <div class="col-lg-4 sidebar ftco-animate">
                     <div class="sidebar-box">
@@ -45,14 +44,14 @@
                             </div>
                         </form>
                     </div>
+
                     <div class="sidebar-box ftco-animate">
-                        <h3 class="heading">Categories</h3>
-                        <ul class="categories">
-                            <li><a href="#">Vegetables <span>(12)</span></a></li>
-                            <li><a href="#">Fruits <span>(22)</span></a></li>
-                            <li><a href="#">Juice <span>(37)</span></a></li>
-                            <li><a href="#">Dries <span>(42)</span></a></li>
-                        </ul>
+                        <h3 class="heading">Catégories</h3>
+                        <div class="tagcloud">
+                            {% for tag in tags %}
+                            <a href="{{ path('app_blog_filter_tag', {'tagid': tag.id}) }}" class="tag-cloud-link">{{ tag.name }}</a>
+                            {% endfor %}
+                        </div>
                     </div>
 
                     <div class="sidebar-box ftco-animate">
@@ -89,20 +88,6 @@
                                     <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-box ftco-animate">
-                        <h3 class="heading">Tag Cloud</h3>
-                        <div class="tagcloud">
-                            <a href="#" class="tag-cloud-link">fruits</a>
-                            <a href="#" class="tag-cloud-link">tomatoe</a>
-                            <a href="#" class="tag-cloud-link">mango</a>
-                            <a href="#" class="tag-cloud-link">apple</a>
-                            <a href="#" class="tag-cloud-link">carrots</a>
-                            <a href="#" class="tag-cloud-link">orange</a>
-                            <a href="#" class="tag-cloud-link">pepper</a>
-                            <a href="#" class="tag-cloud-link">eggplant</a>
                         </div>
                     </div>
 

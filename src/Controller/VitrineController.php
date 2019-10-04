@@ -8,11 +8,13 @@
 
 namespace App\Controller;
 
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class VitrineController extends AbstractController
+class VitrineController extends Controller
 {
     /**
      * @Route("/", name="app_home")
@@ -91,18 +93,50 @@ class VitrineController extends AbstractController
 
     /**
      * @Route("/Blog", name="app_blog")
-     * @Route("/Blog/{tag}", name="app_blog")
      */
-    public function blog(Request $request, $tag)
+    public function blog(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->getRepository('App:BlogArticle')->findAllQuery();
+
+        $tags = $em->getRepository('App:Tag')->findAll();
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            5
+        );
+
+        return $this->render('vitrine/blog.html.twig', array(
+            'pagination'    => $pagination,
+            'tags'          => $tags,
+        ));
+    }
+
+
+    /**
+     * @Route("/Blog/{tagid}", name="app_blog_filter_tag")
+     */
+    public function filterBlog(Request $request, $tagid)
     {
         $em = $this->getDoctrine()->getManager();
 
-        if ($tag) {
-            $blogs = $em->getRepository('App:BlogArticle')->findBy(['tags'], ['publicationDate' => 'DESC']);
-        }
+        $tags = $em->getRepository('App:Tag')->findAll();
+        //$tag = $em->getRepository('App:Tag')->find($tagid);
+        $query = $em->getRepository('App:Tag')->findArticleByTagQuery($tagid);
 
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            5
+        );
 
-        return $this->render('vitrine/blog.html.twig', array('blogs' => $blogs));
+        return $this->render('vitrine/blog.html.twig', array(
+            'pagination'    => $pagination,
+            'tags'          => $tags,
+        ));
     }
 
     /**
