@@ -124,7 +124,7 @@ class VitrineController extends Controller
 
         $tags = $em->getRepository('App:Tag')->findAll();
         //$tag = $em->getRepository('App:Tag')->find($tagid);
-        $query = $em->getRepository('App:Tag')->findArticleByTagQuery($tagid);
+        $query = $em->getRepository('App:BlogArticle')->findArticleByTagQuery($tagid);
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(

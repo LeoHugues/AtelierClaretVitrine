@@ -25,6 +25,13 @@ class BlogArticleRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('a')->orderBy('a.publicationDate', 'DESC');
     }
 
+    public function findArticleByTagQuery($idtag) {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.tags', 't')
+            ->andWhere('t.id IN (:tagid)')
+            ->setParameter('tagid', $idtag);
+    }
+
     // /**
     //  * @return BlogArticle[] Returns an array of BlogArticle objects
     //  */
