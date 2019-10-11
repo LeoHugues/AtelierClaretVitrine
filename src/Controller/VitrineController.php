@@ -10,6 +10,10 @@ namespace App\Controller;
 
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,8 +30,10 @@ class VitrineController extends Controller
         $slides     = $em->getRepository('App:SlideContrib')->findBy(['published' => true], ['priority' => 'ASC']);
         $testimony  = $em->getRepository('App:Testimony')->findAll();
         $partner    = $em->getRepository('App:Partner')->findAll();
+        $actus      = $em->getRepository('App:BlogArticle')->findBy([], ['publicationDate' => 'DESC'], ['limit' => 3]);
 
         return $this->render('vitrine/home.html.twig', array(
+            'actus'         => $actus,
             'slides'        => $slides,
             'testimonies'   => $testimony,
             'partners'      => $partner
@@ -51,8 +57,11 @@ class VitrineController extends Controller
 
         $testimony  = $em->getRepository('App:Testimony')->findAll();
         $contrib    = $em->getRepository('App:CoworkingContrib')->findOneBy(['id' => 2]);
+        $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(2, 3);
+
 
         return $this->render('vitrine/coworking.html.twig', array(
+            'actus'         => $actus,
             'testimonies'   => $testimony,
             'contrib'       => $contrib
         ));
@@ -65,10 +74,12 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(2, 3);
         $testimony  = $em->getRepository('App:Testimony')->findAll();
         $contrib    = $em->getRepository('App:FablabContrib')->findOneBy(['id' => 2]);
 
         return $this->render('vitrine/fablab.html.twig', array(
+            'actus'         => $actus,
             'testimonies'   => $testimony,
             'contrib'       => $contrib
         ));
@@ -83,8 +94,11 @@ class VitrineController extends Controller
 
         $testimony  = $em->getRepository('App:Testimony')->findAll();
         $contrib    = $em->getRepository('App:FormationContrib')->findOneBy(['id' => 2]);
+        $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(1, 3);
+
 
         return $this->render('vitrine/formation.html.twig', array(
+            'actus'         => $actus,
             'testimonies'   => $testimony,
             'contrib'       => $contrib
         ));
@@ -92,7 +106,7 @@ class VitrineController extends Controller
 
 
     /**
-     * @Route("/Blog", name="app_blog")
+     * @Route("/blog", name="app_blog")
      */
     public function blog(Request $request)
     {
@@ -118,14 +132,14 @@ class VitrineController extends Controller
 
 
     /**
-     * @Route("/Blog/{tagid}", name="app_blog_filter_tag")
+     * @Route("/blog/{tagid}", name="app_blog_filter_tag")
      */
     public function filterBlog(Request $request, $tagid)
     {
         $em = $this->getDoctrine()->getManager();
+        $blogContrib = $em->getRepository('App:BlogContrib')->find(1);
 
         $tags = $em->getRepository('App:Tag')->findAll();
-        //$tag = $em->getRepository('App:Tag')->find($tagid);
         $query = $em->getRepository('App:BlogArticle')->findArticleByTagQuery($tagid);
 
         $paginator = $this->get('knp_paginator');
@@ -136,6 +150,7 @@ class VitrineController extends Controller
         );
 
         return $this->render('vitrine/blog.html.twig', array(
+            'blogContrib'   => $blogContrib,
             'pagination'    => $pagination,
             'tags'          => $tags,
         ));

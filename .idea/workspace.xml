@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/VitrineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VitrineController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BlogArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BlogArticleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/vitrine/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/blog.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +244,7 @@
       <workItem from="1570434262406" duration="2317000" />
       <workItem from="1570613311273" duration="1376000" />
       <workItem from="1570623722030" duration="1076000" />
-      <workItem from="1570796896493" duration="7738000" />
+      <workItem from="1570796896493" duration="13646000" />
     </task>
     <servers />
   </component>

@@ -32,6 +32,22 @@ class BlogArticleRepository extends ServiceEntityRepository
             ->setParameter('tagid', $idtag);
     }
 
+    public function findArticleByTag($idtag, $limit) {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.tags', 't')
+            ->andWhere('t.id IN (:tagid)')
+            ->setParameter('tagid', $idtag)
+            ->orderBy('a.publicationDate', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()->getResult();
+    }
+
+    public function findArticleByKeywordQuery($keyword) {
+        return $this->createQueryBuilder('a')
+            ->andWhere("a.title LIKE '%(:keyword)%'")
+            ->setParameter('keyword', $keyword);
+    }
+
     // /**
     //  * @return BlogArticle[] Returns an array of BlogArticle objects
     //  */
