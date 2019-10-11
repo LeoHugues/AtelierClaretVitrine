@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/VitrineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VitrineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BlogArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BlogArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TagRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TagRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/blog.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +237,10 @@
       <workItem from="1570087435321" duration="3234000" />
       <workItem from="1570109033173" duration="9929000" />
       <workItem from="1570176173958" duration="6821000" />
-      <workItem from="1570434262406" duration="1474000" />
+      <workItem from="1570434262406" duration="2317000" />
+      <workItem from="1570613311273" duration="1376000" />
+      <workItem from="1570623722030" duration="1076000" />
+      <workItem from="1570796896493" duration="7738000" />
     </task>
     <servers />
   </component>

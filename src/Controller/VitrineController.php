@@ -99,6 +99,7 @@ class VitrineController extends Controller
         $em = $this->getDoctrine()->getManager();
         $query = $em->getRepository('App:BlogArticle')->findAllQuery();
 
+        $blogContrib = $em->getRepository('App:BlogContrib')->find(1);
         $tags = $em->getRepository('App:Tag')->findAll();
 
         $paginator = $this->get('knp_paginator');
@@ -109,6 +110,7 @@ class VitrineController extends Controller
         );
 
         return $this->render('vitrine/blog.html.twig', array(
+            'blogContrib'   => $blogContrib,
             'pagination'    => $pagination,
             'tags'          => $tags,
         ));
@@ -151,6 +153,14 @@ class VitrineController extends Controller
      * @Route("/Contact", name="app_contact")
      */
     public function contact()
+    {
+        return $this->render('vitrine/contact.html.twig');
+    }
+
+    /**
+     * @Route("/Contact", name="app_contact")
+     */
+    public function busy()
     {
         return $this->render('vitrine/contact.html.twig');
     }

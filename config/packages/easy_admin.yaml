@@ -16,13 +16,16 @@ easy_admin:
             - { entity: 'FablabContrib', params: { action: 'edit', id: 2 }, label: 'Page FabLab', icon: 'wrench'}
             - { entity: 'FormationContrib', params: { action: 'edit', id: 2 }, label: 'Page Formation', icon: 'certificate'}
             - { label: 'Le Blog'}
+            - { entity: 'BlogArticle', params: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
             - { entity: 'BlogArticle', label: 'Nos articles', icon: 'book'}
             - { entity: 'Tag', params: { action: 'new' }, label: 'Ajouter une catégorie', icon: 'tags'}
-            - { entity: 'BlogArticle', params: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
+            - { entity: 'BlogContrib', params: { action: 'edit', id: 1 }, label: "Modifier l'entête", icon: 'picture-o'}
             - { label: 'Gestion utilisateur'}
             - { entity: 'User', label: 'Utilisateurs', icon: 'user'}
             - { label: 'Raccourci'}
             - { label: 'Accéder au Site', route: 'app_home', icon: 'external-link-square', target: '_blank'}
+            #- { label: 'Mettre le site en maintenance', route: 'app_busy', icon: 'external-link-square', target: '_blank'}
+
         brand_color: '#aa3e98'
         form_theme:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
@@ -79,10 +82,13 @@ easy_admin:
             form:
                 title: "Mettre à jour la page coworking"
                 fields:
+                    - { type: 'group', columns: 6, label: "Entête" }
                     - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/coworking', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
+                    - { type: 'section', label: "Image de présentation et Vidéo" }
                     - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/coworking', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
+                    - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
 
@@ -113,6 +119,16 @@ easy_admin:
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+
+        BlogContrib:
+            class: App\Entity\BlogContrib
+            label: "Page Blog"
+            disabled_actions: ['search', 'delete', 'list', 'new']
+            form:
+                title: "Mettre à jour la page Blog"
+                fields:
+                    - { property: 'imageBannerFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête (banniere)"}
+                    - { property: 'titleBanner', type: 'text', label: 'Titre entête' }
 
         BlogArticle:
             class: App\Entity\BlogArticle
