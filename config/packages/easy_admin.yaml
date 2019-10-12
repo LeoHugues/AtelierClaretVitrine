@@ -92,6 +92,16 @@ easy_admin:
                     - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+                    - { type: 'group', columns: 6, label: "Chiffre clé" }
+                    - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/coworking', label: "Image banierre des chiffres clé"}
+                    - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
+                    - { property: 'labelKeynumber1', type: 'text', label: 'Label du chiffre clé n°1' }
+                    - { property: 'keynumber2', type: 'integer', label: 'Chiffre clé n°2' }
+                    - { property: 'labelKeynumber2', type: 'text', label: 'Label du chiffre clé n°2' }
+                    - { property: 'keynumber3', type: 'integer', label: 'Chiffre clé n°3' }
+                    - { property: 'labelKeynumber3', type: 'text', label: 'Label du chiffre clé n°3' }
+                    - { property: 'keynumber4', type: 'integer', label: 'Chiffre clé n°4' }
+                    - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
 
         FablabContrib:
             class: App\Entity\FablabContrib
@@ -100,12 +110,24 @@ easy_admin:
             form:
                 title: "Mettre à jour la page FabLab"
                 fields:
+                    - { type: 'group', columns: 6, label: "Entête" }
                     - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/fablab', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/fablab', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
+                    - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+                    - { type: 'group', columns: 6, label: "Chiffre clé" }
+                    - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/fablab', label: "Image banierre des chiffres clé"}
+                    - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
+                    - { property: 'labelKeynumber1', type: 'text', label: 'Label du chiffre clé n°1' }
+                    - { property: 'keynumber2', type: 'integer', label: 'Chiffre clé n°2' }
+                    - { property: 'labelKeynumber2', type: 'text', label: 'Label du chiffre clé n°2' }
+                    - { property: 'keynumber3', type: 'integer', label: 'Chiffre clé n°3' }
+                    - { property: 'labelKeynumber3', type: 'text', label: 'Label du chiffre clé n°3' }
+                    - { property: 'keynumber4', type: 'integer', label: 'Chiffre clé n°4' }
+                    - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
 
         FormationContrib:
             class: App\Entity\FormationContrib
@@ -114,12 +136,24 @@ easy_admin:
             form:
                 title: "Mettre à jour la page Formation"
                 fields:
+                    - { type: 'group', columns: 6, label: "Entête" }
                     - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/formation', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
+                    - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+                    - { type: 'group', columns: 6, label: "Chiffre clé" }
+                    - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/formation', label: "Image banierre des chiffres clé"}
+                    - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
+                    - { property: 'labelKeynumber1', type: 'text', label: 'Label du chiffre clé n°1' }
+                    - { property: 'keynumber2', type: 'integer', label: 'Chiffre clé n°2' }
+                    - { property: 'labelKeynumber2', type: 'text', label: 'Label du chiffre clé n°2' }
+                    - { property: 'keynumber3', type: 'integer', label: 'Chiffre clé n°3' }
+                    - { property: 'labelKeynumber3', type: 'text', label: 'Label du chiffre clé n°3' }
+                    - { property: 'keynumber4', type: 'integer', label: 'Chiffre clé n°4' }
+                    - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
 
         BlogContrib:
             class: App\Entity\BlogContrib
@@ -128,7 +162,7 @@ easy_admin:
             form:
                 title: "Mettre à jour la page Blog"
                 fields:
-                    - { property: 'imageBannerFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête (banniere)"}
+                    - { property: 'imageBannerFile', type: 'vich_image', base_path: '/images/blog', label: "Image d'entête (banniere)"}
                     - { property: 'titleBanner', type: 'text', label: 'Titre entête' }
 
         BlogArticle:
