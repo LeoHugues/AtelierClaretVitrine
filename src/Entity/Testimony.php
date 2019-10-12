@@ -13,6 +13,11 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Testimony
 {
+    const TESTIMONY_TYPE_MAKER           = 0;
+    const TESTIMONY_TYPE_COWORKER        = 1;
+    const TESTIMONY_TYPE_FORMATEUR       = 2;
+    const TESTIMONY_TYPE_IRREDUCTIBLE    = 3;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -45,6 +50,11 @@ class Testimony
      * @Vich\UploadableField(mapping="home_testimony_image", fileNameProperty="image")
      */
     private $imgFile;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $testimonyType;
 
     public function getId(): ?int
     {
@@ -115,4 +125,19 @@ class Testimony
         $this->imgFile = $imgFile;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTestimonyType()
+    {
+        return $this->testimonyType;
+    }
+
+    /**
+     * @param mixed $testimonyType
+     */
+    public function setTestimonyType($testimonyType): void
+    {
+        $this->testimonyType = $testimonyType;
+    }
 }

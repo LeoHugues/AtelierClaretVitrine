@@ -57,6 +57,7 @@ easy_admin:
                     - { property: 'position', type: 'text', label: 'Métier / Position' }
                     - { property: 'text', type: 'text', label: 'citation' }
                     - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/testimony'}
+                    - { property: 'testimonyType', type: 'choice', type_options: { mapped: true, expanded: true, multiple: false, choices: { 'Maker': 0, 'Coworker': 1, 'Formateur': 2, 'Irreductible': 3 }}}
             list:
                 title: "Les Irreductibles"
                 fields: ['id', 'fullname', 'position', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/testimony' }]
