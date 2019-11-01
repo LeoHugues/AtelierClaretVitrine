@@ -1,0 +1,16 @@
+{% extends '@!CHCookieConsent/form/cookie_consent_theme.html.twig' %}
+
+{% block choice_row %}
+    <div class="ch-cookie-consent__category">
+        <div class="ch-cookie-consent__category-toggle">
+            {% for child in form if not child.rendered %}
+                {{- form_widget(child) -}}
+                {{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}
+            {% endfor %}
+        </div>
+        <div class="ch-cookie-consent__category-information">
+            <h5 class="ch-cookie-consent__category-title">{{ ('ch_cookie_consent.'~name~'.title')|trans({}, 'CHCookieConsentBundle') }}</h5>
+            <p class="ch-cookie-consent__category-description">{{ ('ch_cookie_consent.'~name~'.description')|trans({}, 'CHCookieConsentBundle') }}</p>
+        </div>
+    </div>
+{% endblock %}

@@ -83,6 +83,8 @@
 
         {% block body %}{% endblock %}
 
+        {% include "@CHCookieConsent/cookie_consent_styling.html.twig" %}
+
         <footer class="ftco-footer ftco-section">
             <div class="container">
                 <div class="row">
@@ -142,7 +144,10 @@
             </div>
         </footer>
 
-
+        <!-- cookie-consent -->
+        <div class="ch-cookie-consent col-lg-8">
+            {{ render(path('ch_cookie_consent.show_if_cookie_consent_not_set', { 'locale' : app.request.locale })) }}
+        </div>
 
         <!-- loader -->
         <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

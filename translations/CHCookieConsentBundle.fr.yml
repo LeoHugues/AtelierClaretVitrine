@@ -1,0 +1,13 @@
+ch_cookie_consent:
+  title: 'Gestion des Cookies'
+  intro: 'Notre politique de gestion des données à caractère personnel'
+  read_more: 'En savoir plus'
+  analytics:
+    title: 'Acceptez-vous les cookies Analytics ?'
+    description: "Ils nous permettent d'analyser et d'améliorer votre navigation sur notre site web."
+  social_media:
+    title: 'Acceptez-vous les cookies des réseaux sociaux ?'
+    description: "Ils nous permettent d'en savoir un peu plus sur vous et d'améliorer votre navigation"
+  no: 'Oui'
+  yes: 'Non'
+  save: 'Enregistrer'

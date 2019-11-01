@@ -1,0 +1,5 @@
+{% extends '@!CHCookieConsent/cookie_consent.html.twig' %}
+
+{% block submit_button %}
+    <button type="submit" class="btn ch-cookie-consent__btn bg-primary">{{ 'ch_cookie_consent.save'|trans({}, 'CHCookieConsentBundle') }}</button>
+{% endblock %}

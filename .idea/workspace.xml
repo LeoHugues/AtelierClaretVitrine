@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CoworkingContrib.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CoworkingContrib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/FablabContrib.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FablabContrib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/FormationContrib.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FormationContrib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/bg_2test(1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +156,8 @@
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/wa72/htmlpagedom" />
+      <path value="$PROJECT_DIR$/vendor/connectholland/cookie-consent-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1QuaK7sPQ9cRxpeULOttUUxIVfG" />
@@ -163,23 +166,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/bundles/CHCookieConsentBundle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/bundles/CHCookieConsentBundle" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src/Repository" />
       <recent name="$PROJECT_DIR$/public/images/coworking" />
       <recent name="$PROJECT_DIR$/public/vegefoods/vegefoods/images" />
-      <recent name="$PROJECT_DIR$/templates/vitrine" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/bundle" />
+      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle" />
+      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle/template" />
+      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle/views" />
       <recent name="$PROJECT_DIR$/public/images/fablab" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/templates/vitrine" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -245,7 +250,12 @@
       <workItem from="1570613311273" duration="1376000" />
       <workItem from="1570623722030" duration="1076000" />
       <workItem from="1570796896493" duration="13767000" />
-      <workItem from="1570865983450" duration="8021000" />
+      <workItem from="1570865983450" duration="8981000" />
+      <workItem from="1570965938249" duration="2383000" />
+      <workItem from="1571736182525" duration="1162000" />
+      <workItem from="1572339265322" duration="4435000" />
+      <workItem from="1572425197738" duration="5720000" />
+      <workItem from="1572597297450" duration="4196000" />
     </task>
     <servers />
   </component>
