@@ -39,7 +39,6 @@ easy_admin:
                 fields:
                     - { property: 'title', type: 'text', label: 'Titre de la slide' }
                     - { property: 'legend', type: 'text', label: 'Légende' }
-                    - { property: 'labelButton', type: 'text', label: 'Texte du bouton' }
                     - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/carousel' }
                     - { property: 'priority', type: 'integer', label: 'Priorité'}
                     - { property: 'published', label: 'Publier'}

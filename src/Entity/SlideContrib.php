@@ -33,11 +33,6 @@ class SlideContrib
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $labelButton;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
     private $image;
 
     /**
