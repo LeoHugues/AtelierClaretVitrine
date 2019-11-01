@@ -102,6 +102,10 @@ easy_admin:
                     - { property: 'labelKeynumber3', type: 'text', label: 'Label du chiffre clé n°3' }
                     - { property: 'keynumber4', type: 'integer', label: 'Chiffre clé n°4' }
                     - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
+                    - { type: 'group', columns: 6, label: "Section Tarifs" }
+                    - { property: 'titleTarif', type: 'text', label: 'Titre de la section Tarif' }
+                    - { property: 'tarifs', type: 'text_editor', label: 'Contenu de la section Tarif' }
+
 
         FablabContrib:
             class: App\Entity\FablabContrib
