@@ -10008,6 +10008,11 @@ textarea.form-control {
   margin: 0 auto;
 }
 
+#actu-section .block-21 {
+  padding: 1rem;
+  background-color: #FFFFFF;
+}
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
