@@ -31,7 +31,7 @@ class VitrineController extends Controller
         $slides     = $em->getRepository('App:SlideContrib')->findBy(['published' => true], ['priority' => 'ASC']);
         $testimony  = $em->getRepository('App:Testimony')->findBy(['testimonyType' => Testimony::TESTIMONY_TYPE_IRREDUCTIBLE]);
         $partner    = $em->getRepository('App:Partner')->findAll();
-        $actus      = $em->getRepository('App:BlogArticle')->findBy([], ['publicationDate' => 'DESC'], ['limit' => 3]);
+        $actus      = $em->getRepository('App:BlogArticle')->findLastNews();
 
         return $this->render('vitrine/home.html.twig', array(
             'actus'         => $actus,

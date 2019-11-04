@@ -10013,6 +10013,12 @@ textarea.form-control {
   background-color: #FFFFFF;
 }
 
+#actu-section {
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);

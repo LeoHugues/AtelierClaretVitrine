@@ -48,6 +48,14 @@ class BlogArticleRepository extends ServiceEntityRepository
             ->setParameter('keyword', $keyword);
     }
 
+    public function findLastNews() {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.publicationDate', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()->getResult()
+            ;
+    }
+
     // /**
     //  * @return BlogArticle[] Returns an array of BlogArticle objects
     //  */

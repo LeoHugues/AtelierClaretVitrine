@@ -23,7 +23,7 @@
         </div>
     </section>
 
-    <section class="ftco-section" id="intro-section">
+    <section class="ftco-section bg-light" id="intro-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center mb-5">
@@ -69,19 +69,16 @@
         </div>
     </section>
 
-    <section class="ftco-section bg-light" id="actu-section">
+    <section class="ftco-section" id="actu-section" style="background-image: url({{ asset('images/home/logo-bg-atelier.png')}});">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-12 text-center mb-5">
+                <div class="col-md-12 text-center mb-5 heading-section">
                     <h2 class="heading"> A la Une</h2>
                 </div>
-                <div class="col-md-12 row">
-                    <div class="col-md-6 pl-5">
-                        <div class="fb-page" data-href="https://www.facebook.com/latelierdeclaret/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/latelierdeclaret/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/latelierdeclaret/">L&#039;Atelier de Claret</a></blockquote></div>
-                    </div>
+                <div class="col-md-12 row " >
                     <div class="ftco-animate col-md-6">
                         {% for actu in actus %}
-                            <div class="block-21 mb-4 d-flex">
+                            <div class="block-21 mb-4 d-flex bg-light">
                                 <a class="blog-img mr-4" style="background-image: url({{asset(['images/blog/', actu.filename] | join )}});"></a>
                                 <div class="text">
                                     <h3 class="heading-1"><a href="#">{{ actu.title }}</a></h3>
@@ -92,12 +89,15 @@
                             </div>
                         {% endfor %}
                     </div>
+                    <div class="col-md-6">
+                        <div class="fb-page" data-href="https://www.facebook.com/latelierdeclaret/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/latelierdeclaret/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/latelierdeclaret/">L&#039;Atelier de Claret</a></blockquote></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="ftco-section testimony-section">
+    <section class="ftco-section testimony-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate text-center">
