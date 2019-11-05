@@ -22,6 +22,7 @@ easy_admin:
             - { entity: 'BlogContrib', params: { action: 'edit', id: 1 }, label: "Modifier l'entête", icon: 'picture-o'}
             - { label: 'Gestion utilisateur'}
             - { entity: 'User', label: 'Utilisateurs', icon: 'user'}
+            - { entity: 'NewsLetter', params: { action: 'list'}, label: 'Les abonnées', icon: 'users'}
             - { label: 'Raccourci'}
             - { label: 'Accéder au Site', route: 'app_home', icon: 'external-link-square', target: '_blank'}
             #- { label: 'Mettre le site en maintenance', route: 'app_busy', icon: 'external-link-square', target: '_blank'}
@@ -220,3 +221,9 @@ easy_admin:
                           multiple: true
                           choices: { 'Administrateur': 'ROLE_ADMIN' }
                 edit: "Editer un utilisateur"
+        NewsLetter:
+                    class: App\Entity\NewsLetter
+                    label: 'Les abonnés à la NewsLetter'
+                    disabled_actions: ['search', 'delete', 'edit', 'new']
+                    list:
+                        title: "Les abonnés à la NewsLetter"

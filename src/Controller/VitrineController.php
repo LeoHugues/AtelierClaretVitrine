@@ -8,7 +8,9 @@
 
 namespace App\Controller;
 
+use App\Entity\NewsLetter;
 use App\Entity\Testimony;
+use App\Form\NewsLetterType;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
@@ -24,7 +26,7 @@ class VitrineController extends Controller
     /**
      * @Route("/", name="app_home")
      */
-    public function home()
+    public function home(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -33,11 +35,23 @@ class VitrineController extends Controller
         $partner    = $em->getRepository('App:Partner')->findAll();
         $actus      = $em->getRepository('App:BlogArticle')->findLastNews();
 
+        $newsLetter = new NewsLetter();
+        $form = $this->createForm(NewsLetterType::class, $newsLetter);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $newsLetter = $form->getData();
+
+            $em->persist($newsLetter);
+            $em->flush();
+        }
+
         return $this->render('vitrine/home.html.twig', array(
-            'actus'         => $actus,
-            'slides'        => $slides,
-            'testimonies'   => $testimony,
-            'partners'      => $partner
+            'actus'             => $actus,
+            'slides'            => $slides,
+            'testimonies'       => $testimony,
+            'partners'          => $partner,
+            'newsletter_form'   => $form->createView()
         ));
     }
 
