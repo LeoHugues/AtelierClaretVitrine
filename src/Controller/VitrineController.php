@@ -58,9 +58,24 @@ class VitrineController extends Controller
     /**
      * @Route("/Adhesion", name="app_adhesion")
      */
-    public function adhesion()
+    public function adhesion(Request $request)
     {
-        return $this->render('vitrine/adhesion.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $newsLetter = new NewsLetter();
+        $form = $this->createForm(NewsLetterType::class, $newsLetter);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $newsLetter = $form->getData();
+
+            $em->persist($newsLetter);
+            $em->flush();
+        }
+
+        return $this->render('vitrine/adhesion.html.twig', [
+            'newsletter_form' => $form->createView(),
+        ]);
     }
 
     /**
@@ -155,6 +170,7 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $blogContrib = $em->getRepository('App:BlogContrib')->find(1);
+        $actus      = $em->getRepository('App:BlogArticle')->findLastNews();
 
         $tags = $em->getRepository('App:Tag')->findAll();
         $query = $em->getRepository('App:BlogArticle')->findArticleByTagQuery($tagid);
@@ -170,6 +186,7 @@ class VitrineController extends Controller
             'blogContrib'   => $blogContrib,
             'pagination'    => $pagination,
             'tags'          => $tags,
+            'actus'         => $actus,
         ));
     }
 

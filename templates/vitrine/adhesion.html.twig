@@ -4,13 +4,54 @@
 {% block title %}Adhésion{% endblock %}
 
 {% block body %}
+{#    <div class="hero-wrap hero-bread" style="background-image: url('{{asset(['images/coworking/', contrib.imageHeader]|join)}}');">#}
+    <div class="hero-wrap hero-bread" style="background-image: url('{{asset('images/formation/bg_1.jpg')}}');">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-0 bread">Adhésion</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="tm-section bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-centered my-5 text-center">
+                    <h1 class="heading-section mb-5">Rejoignez-nous !</h1>
+                    <p>
+                        Pour nous rejoindre, rien de plus simple ! Tu Peux adhérer en quelques clics en remplissant le formulaire d'Adhésion HelloAsso ci-dessous.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="tm-section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
-                    <h1 class="tm-gold-text tm-title tm-teaser">"Construire l'avenir plutôt que chercher à le prédire"</h1>
-                    <p class="tm-subtitle">L’Atelier de Claret est un « Tiers lieu » ou espace coopératif à la fois lieu de travail partagé (Coworking), espace de fabrication numérique (FabLab et/ou Maker Place) et plateforme de formation favorisant l'esprit entrepreneurial, la création d’activités, l’employabilité par l'innovation. Il organise des évènements et des formations dans les domaines du numérique et des nouvelles technologies et/ou sur des thématiques innovantes et éco-responsables avec une promesse : "Construire l'avenir plutôt que chercher à le prédire" »
-                    </p>
+                <div class="col-md-8 col-centered mt-5">
+                    <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/atelier-de-claret/adhesions/atelier-de-claret-adhesions-2018-2019/widget" style="width:100%;height:750px;border:none;" onload="window.scroll(0, this.offsetTop)"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+        <div class="container py-4">
+            <div class="row d-flex justify-content-center pt-5">
+                <div class="col-md-6">
+                    <h2 style="font-size: 22px;" class="mb-0">Abonnez-vous à la Newsletter</h2>
+                    <span>Nous vous tiendrons au courant de l'Actu !</span>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    {{ form_start(newsletter_form, {'attr': {'class': 'subscribe-form'}}) }}
+                    <div class="form-group d-flex news-letter">
+                        {{ form_widget(newsletter_form.email) }}
+                        {{ form_widget(newsletter_form.submit) }}
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        {{ form_row(newsletter_form.captcha) }}
+                        {{ form_end(newsletter_form) }}
+                    </div>
                 </div>
             </div>
         </div>
