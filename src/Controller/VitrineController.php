@@ -8,8 +8,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
 use App\Entity\NewsLetter;
 use App\Entity\Testimony;
+use App\Form\ContactType;
 use App\Form\NewsLetterType;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -201,16 +203,40 @@ class VitrineController extends Controller
     /**
      * @Route("/Contact", name="app_contact")
      */
-    public function contact()
+    public function contact(Request $request)
     {
-        return $this->render('vitrine/contact.html.twig');
-    }
+        $em = $this->getDoctrine()->getManager();
 
-    /**
-     * @Route("/Contact", name="app_contact")
-     */
-    public function busy()
-    {
-        return $this->render('vitrine/contact.html.twig');
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            /** @var Contact $contact */
+            $contact = $form->getData();
+
+            $mailer = $this->get('mailer');
+
+            $message = (new \Swift_Message($contact->getSubject()))
+                ->setFrom($contact->getEmail())
+                ->setTo('leo.hugues@hotmail.fr')
+                ->setBody(
+                    $this->renderView(
+                    // templates/emails/registration.html.twig
+                        'email/contact.html.twig',
+                        ['name' => $contact->getUsername()]
+                    ),
+                    'text/html'
+                )
+            ;
+
+            $mailer->send($message);
+            $em->persist($contact);
+            $em->flush();
+        }
+
+        return $this->render('vitrine/contact.html.twig', [
+            'contact_form' => $form->createView(),
+        ]);
     }
 }

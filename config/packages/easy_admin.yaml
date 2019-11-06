@@ -23,6 +23,7 @@ easy_admin:
             - { label: 'Gestion utilisateur'}
             - { entity: 'User', label: 'Utilisateurs', icon: 'user'}
             - { entity: 'NewsLetter', params: { action: 'list'}, label: 'Les abonnées', icon: 'users'}
+            - { entity: 'Contact', params: { action: 'list'}, label: 'Prise de contact', icon: 'users'}
             - { label: 'Raccourci'}
             - { label: 'Accéder au Site', route: 'app_home', icon: 'external-link-square', target: '_blank'}
             #- { label: 'Mettre le site en maintenance', route: 'app_busy', icon: 'external-link-square', target: '_blank'}
@@ -227,3 +228,11 @@ easy_admin:
                     disabled_actions: ['search', 'delete', 'edit', 'new']
                     list:
                         title: "Les abonnés à la NewsLetter"
+
+        Contact:
+                    class: App\Entity\Contact
+                    label: 'Contact via le site'
+                    disabled_actions: ['search', 'delete', 'edit', 'new']
+                    list:
+                        title: "Prise de contact via le site vitrine"
+                        fields: ['id', 'username', 'email', 'subject', 'message']
