@@ -61,9 +61,11 @@ easy_admin:
             form:
                 title: "Ajouter un Membres"
                 fields:
+                    - { type: 'group', columns: 6, label: "Contenue" }
                     - { property: 'fullname', type: 'text', label: 'Nom et prénom' }
                     - { property: 'position', type: 'text', label: 'Métier / Position' }
                     - { property: 'text', type: 'text', label: 'citation' }
+                    - { type: 'group', columns: 6, label: "Réglage" }
                     - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/testimony'}
                     - { property: 'testimonyType', type: 'choice', type_options: { mapped: true, expanded: true, multiple: false, choices: { 'Maker': 0, 'Coworker': 1, 'Formateur': 2, 'Irreductible': 3 }}}
             list:
@@ -186,8 +188,10 @@ easy_admin:
             form:
                 title: "Ajouter un article"
                 fields:
+                    - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'title', type: 'text'}
                     - { property: 'text', type: 'text_editor'}
+                    - { type: 'group', columns: 6, label: "Réglage" }
                     - { property: 'tags', type: 'easyadmin_autocomplete'}
                     - { property: 'imgFile', type: 'vich_image', base_path: '/images/blog'}
                     - { property: 'publicationDate', type: 'date'}
