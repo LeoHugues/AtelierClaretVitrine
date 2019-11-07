@@ -15,6 +15,9 @@
                             <div class="col-md-12 ftco-animate text-center">
                                 <h1 class="mb-2">{{ slide.title}}<br></h1>
                                 <h2 class="subheading mb-4">{{ slide.legend }}</h2>
+                                <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/atelier%20de%20claret/collectes/atelier-de-claret/widget-bouton" style="width:100%;height:70px;border:none;"></iframe>
+                                <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/atelier-de-claret/adhesions/atelier-de-claret-adhesions-2020/widget-bouton" style="width:100%;height:70px;border:none;"></iframe>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -79,11 +82,11 @@
                     <div class="ftco-animate col-md-6">
                         {% for actu in actus %}
                             <div class="block-21 mb-4 d-flex bg-light">
-                                <a class="blog-img mr-4" style="background-image: url({{asset(['images/blog/', actu.filename] | join )}});"></a>
+                                <a href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}" class="blog-img mr-4" style="background-image: url({{asset(['images/blog/', actu.filename] | join )}});"></a>
                                 <div class="text">
-                                    <h3 class="heading-1"><a href="#">{{ actu.title }}</a></h3>
+                                    <h3 class="heading-1"><a href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}">{{ actu.title }}</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> {{ actu.publicationDate|date('d M y')}}</a></div>
+                                        <div><a href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}"><span class="icon-calendar"></span> {{ actu.publicationDate|date('d M y')}}</a></div>
                                     </div>
                                 </div>
                             </div>

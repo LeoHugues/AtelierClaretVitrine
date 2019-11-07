@@ -52,11 +52,11 @@
                     <div class="sidebar-box ftco-animate">
                         {% for actu in actus %}
                             <div class="block-21 mb-4 d-flex bg-light">
-                                <a class="blog-img mr-4" style="background-image: url({{asset(['images/blog/', actu.filename] | join )}});"></a>
+                                <a class="blog-img mr-4" href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}" style="background-image: url({{asset(['images/blog/', actu.filename] | join )}});"></a>
                                 <div class="text">
-                                    <h3 class="heading-1"><a href="#">{{ actu.title }}</a></h3>
+                                    <h3 class="heading-1"><a href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}">{{ actu.title }}</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> {{ actu.publicationDate|date('d M y')}}</a></div>
+                                        <div><a href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}"><span class="icon-calendar"></span> {{ actu.publicationDate|date('d M y')}}</a></div>
                                     </div>
                                 </div>
                             </div>

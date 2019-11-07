@@ -7,23 +7,27 @@ easy_admin:
 
     design:
         menu:
-            - { label: "Page d'accueil"}
-            - { entity: "SlideContrib", label: 'Les slides', icon: 'picture-o'}
-            - { entity: "Testimony", label: 'Les irréductibles', icon: 'users'}
-            - { entity: "Partner", label: 'Les partenaires', icon: 'weixin'}
-            - { label: 'Pages Activités'}
-            - { entity: 'CoworkingContrib', params: { action: 'edit', id: 2 },  label: 'Page Coworking', icon: 'coffee'}
-            - { entity: 'FablabContrib', params: { action: 'edit', id: 2 }, label: 'Page FabLab', icon: 'wrench'}
-            - { entity: 'FormationContrib', params: { action: 'edit', id: 2 }, label: 'Page Formation', icon: 'certificate'}
+            - { label: 'Pages web'}
+            - label: "Accueil"
+              children :
+                - { entity: "SlideContrib", label: 'Les slides', icon: 'picture-o'}
+                - { entity: "Partner", label: 'Les partenaires', icon: 'weixin'}
+            - label: "Pages Activités"
+              children:
+                - { entity: 'CoworkingContrib', params: { action: 'edit', id: 2 },  label: 'Page Coworking', icon: 'coffee'}
+                - { entity: 'FablabContrib', params: { action: 'edit', id: 2 }, label: 'Page FabLab', icon: 'wrench'}
+                - { entity: 'FormationContrib', params: { action: 'edit', id: 2 }, label: 'Page Formation', icon: 'certificate'}
+            - { entity: "Testimony", label: 'Les Membres', icon: 'users'}
             - { label: 'Le Blog'}
             - { entity: 'BlogArticle', params: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
             - { entity: 'BlogArticle', label: 'Nos articles', icon: 'book'}
             - { entity: 'Tag', params: { action: 'new' }, label: 'Ajouter une catégorie', icon: 'tags'}
             - { entity: 'BlogContrib', params: { action: 'edit', id: 1 }, label: "Modifier l'entête", icon: 'picture-o'}
+            - { label: 'Communication'}
+            - { entity: 'NewsLetter', params: { action: 'list'}, label: 'Abonnés NewsLetter', icon: 'users'}
+            - { entity: 'Contact', params: { action: 'list'}, label: 'Contact / Message', icon: 'users'}
             - { label: 'Gestion utilisateur'}
             - { entity: 'User', label: 'Utilisateurs', icon: 'user'}
-            - { entity: 'NewsLetter', params: { action: 'list'}, label: 'Les abonnées', icon: 'users'}
-            - { entity: 'Contact', params: { action: 'list'}, label: 'Prise de contact', icon: 'users'}
             - { label: 'Raccourci'}
             - { label: 'Accéder au Site', route: 'app_home', icon: 'external-link-square', target: '_blank'}
             #- { label: 'Mettre le site en maintenance', route: 'app_busy', icon: 'external-link-square', target: '_blank'}

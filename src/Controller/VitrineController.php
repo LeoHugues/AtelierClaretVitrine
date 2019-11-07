@@ -179,7 +179,7 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $actus          = $em->getRepository('App:BlogArticle')->findBy([], ['publicationDate' => 'DESC'], ['limit' => 3]);
+        $actus          = $em->getRepository('App:BlogArticle')->findLastNews();
         $query          = $em->getRepository('App:BlogArticle')->findAllQuery();
         $blogContrib    = $em->getRepository('App:BlogContrib')->find(1);
         $tags           = $em->getRepository('App:Tag')->findAll();
@@ -207,7 +207,7 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $blogContrib = $em->getRepository('App:BlogContrib')->find(1);
-        $actus      = $em->getRepository('App:BlogArticle')->findLastNews();
+        $actus       = $em->getRepository('App:BlogArticle')->findLastNews();
 
         $tags = $em->getRepository('App:Tag')->findAll();
         $query = $em->getRepository('App:BlogArticle')->findArticleByTagQuery($tagid);
@@ -224,6 +224,26 @@ class VitrineController extends Controller
             'pagination'    => $pagination,
             'tags'          => $tags,
             'actus'         => $actus,
+        ));
+    }
+
+    /**
+     * @Route("/blog/article/{idArticle}", name="app_blog_article_show")
+     */
+    public function blogArticle(Request $request, $idArticle)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $blogContrib = $em->getRepository('App:BlogContrib')->find(1);
+        $actus       = $em->getRepository('App:BlogArticle')->findLastNews();
+        $article     = $em->getRepository('App:BlogArticle')->find($idArticle);
+        $tags        = $em->getRepository('App:Tag')->findAll();
+
+
+        return $this->render('vitrine/article.html.twig', array(
+            'blogContrib'   => $blogContrib,
+            'tags'          => $tags,
+            'actus'         => $actus,
+            'article'       => $article
         ));
     }
 
