@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/VitrineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VitrineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/vitrine/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +252,7 @@
       <workItem from="1572597297450" duration="8682000" />
       <workItem from="1572859221266" duration="15896000" />
       <workItem from="1573033845364" duration="10494000" />
-      <workItem from="1573116112222" duration="3694000" />
+      <workItem from="1573116112222" duration="3941000" />
     </task>
     <servers />
   </component>
