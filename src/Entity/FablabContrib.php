@@ -113,6 +113,16 @@ class FablabContrib
      */
     private $labelKeynumber4;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $titleTarif;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $tarifs;
+
 
     public function getId(): ?int
     {
@@ -381,5 +391,37 @@ class FablabContrib
     public function setLabelKeynumber4($labelKeynumber4): void
     {
         $this->labelKeynumber4 = $labelKeynumber4;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitleTarif()
+    {
+        return $this->titleTarif;
+    }
+
+    /**
+     * @param mixed $titleTarif
+     */
+    public function setTitleTarif($titleTarif): void
+    {
+        $this->titleTarif = $titleTarif;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTarifs()
+    {
+        return $this->tarifs;
+    }
+
+    /**
+     * @param mixed $tarifs
+     */
+    public function setTarifs($tarifs): void
+    {
+        $this->tarifs = $tarifs;
     }
 }

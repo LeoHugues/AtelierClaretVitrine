@@ -140,4 +140,19 @@ class Testimony
     {
         $this->testimonyType = $testimonyType;
     }
+
+    public function getTestimonyLabel() : string
+    {
+        if ($this->testimonyType == self::TESTIMONY_TYPE_MAKER) {
+            return "Maker";
+        } elseif ($this->testimonyType == self::TESTIMONY_TYPE_COWORKER) {
+            return "Coworker";
+        } elseif ($this->testimonyType == self::TESTIMONY_TYPE_FORMATEUR) {
+            return "Formateur";
+        } elseif ($this->testimonyType == self::TESTIMONY_TYPE_IRREDUCTIBLE) {
+            return "Irreductible";
+        }
+
+        return "nul";
+    }
 }

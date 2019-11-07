@@ -50,9 +50,9 @@ easy_admin:
 
         Testimony:
             class: App\Entity\Testimony
-            label: "Les Irréductibles"
+            label: "Les Membres"
             form:
-                title: "Ajouter un Irréductibles"
+                title: "Ajouter un Membres"
                 fields:
                     - { property: 'fullname', type: 'text', label: 'Nom et prénom' }
                     - { property: 'position', type: 'text', label: 'Métier / Position' }
@@ -61,7 +61,7 @@ easy_admin:
                     - { property: 'testimonyType', type: 'choice', type_options: { mapped: true, expanded: true, multiple: false, choices: { 'Maker': 0, 'Coworker': 1, 'Formateur': 2, 'Irreductible': 3 }}}
             list:
                 title: "Les Irreductibles"
-                fields: ['id', 'fullname', 'position', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/testimony' }]
+                fields: ['id', 'fullname', 'position', 'TestimonyLabel', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/testimony' }]
             edit:
                 title: "Modifier un Irréductible"
 
@@ -133,6 +133,9 @@ easy_admin:
                     - { property: 'labelKeynumber3', type: 'text', label: 'Label du chiffre clé n°3' }
                     - { property: 'keynumber4', type: 'integer', label: 'Chiffre clé n°4' }
                     - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
+                    - { type: 'group', columns: 6, label: "Section Tarifs" }
+                    - { property: 'titleTarif', type: 'text', label: 'Titre de la section Tarif' }
+                    - { property: 'tarifs', type: 'text_editor', label: 'Contenu de la section Tarif' }
 
         FormationContrib:
             class: App\Entity\FormationContrib

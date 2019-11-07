@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/FablabContrib.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FablabContrib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Testimony.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Testimony.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,7 +256,7 @@
       <workItem from="1572597297450" duration="8682000" />
       <workItem from="1572859221266" duration="15896000" />
       <workItem from="1573033845364" duration="10494000" />
-      <workItem from="1573116112222" duration="3941000" />
+      <workItem from="1573116112222" duration="4841000" />
     </task>
     <servers />
   </component>
