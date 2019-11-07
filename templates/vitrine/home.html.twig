@@ -15,9 +15,7 @@
                             <div class="col-md-12 ftco-animate text-center">
                                 <h1 class="mb-2">{{ slide.title}}<br></h1>
                                 <h2 class="subheading mb-4">{{ slide.legend }}</h2>
-                                <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/atelier%20de%20claret/collectes/atelier-de-claret/widget-bouton" style="width:100%;height:70px;border:none;"></iframe>
-                                <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/atelier-de-claret/adhesions/atelier-de-claret-adhesions-2020/widget-bouton" style="width:100%;height:70px;border:none;"></iframe>
-                            </div>
+                                {{ slide.button | raw }}
                             </div>
                         </div>
                     </div>

@@ -53,6 +53,12 @@ class SlideContrib
      */
     private $imgFile;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $button;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -152,5 +158,21 @@ class SlideContrib
     public function setPublished(bool $published): void
     {
         $this->published = $published;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getButton()
+    {
+        return $this->button;
+    }
+
+    /**
+     * @param mixed $button
+     */
+    public function setButton($button): void
+    {
+        $this->button = $button;
     }
 }

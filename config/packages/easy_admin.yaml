@@ -43,9 +43,12 @@ easy_admin:
             form:
                 title: "Ajouter une slide"
                 fields:
+                    - { type: 'group', columns: 6, label: "Entête" }
                     - { property: 'title', type: 'text', label: 'Titre de la slide' }
                     - { property: 'legend', type: 'text', label: 'Légende' }
                     - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/carousel' }
+                    - { type: 'group', columns: 6, label: "Réglage" }
+                    - { property: 'button', type: 'text', label: 'Bouton iFrame'}
                     - { property: 'priority', type: 'integer', label: 'Priorité'}
                     - { property: 'published', label: 'Publier'}
             list:
