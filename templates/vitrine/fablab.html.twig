@@ -157,18 +157,21 @@
 
     <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
         <div class="container py-4">
-            <div class="row d-flex justify-content-center py-5">
+            <div class="row d-flex justify-content-center pt-5">
                 <div class="col-md-6">
-                    <h2 style="font-size: 22px;" class="mb-0">Inscris-toi à notre NewsLetter</h2>
-                    <span>Pour être tenu au courant des dernières news de l'Atelier</span>
+                    <h2 style="font-size: 22px;" class="mb-0">Abonnez-vous à la Newsletter</h2>
+                    <span>Nous vous tiendrons au courant de l'Actu !</span>
                 </div>
                 <div class="col-md-6 d-flex align-items-center">
-                    <form action="#" class="subscribe-form">
-                        <div class="form-group d-flex">
-                            <input type="text" class="form-control" placeholder="Adresse email">
-                            <input type="submit" value="S'abonner" class="submit px-3">
-                        </div>
-                    </form>
+                    {{ form_start(newsletter_form, {'attr': {'class': 'subscribe-form'}}) }}
+                    <div class="form-group d-flex news-letter">
+                        {{ form_widget(newsletter_form.email) }}
+                        {{ form_widget(newsletter_form.submit) }}
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        {{ form_row(newsletter_form.captcha) }}
+                        {{ form_end(newsletter_form) }}
+                    </div>
                 </div>
             </div>
         </div>

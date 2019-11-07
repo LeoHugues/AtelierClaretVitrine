@@ -83,7 +83,7 @@ class VitrineController extends Controller
     /**
      * @Route("/Coworking", name="app_coworking")
      */
-    public function coworking()
+    public function coworking(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -91,18 +91,29 @@ class VitrineController extends Controller
         $contrib    = $em->getRepository('App:CoworkingContrib')->findOneBy(['id' => 2]);
         $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(2, 3);
 
+        $newsLetter = new NewsLetter();
+        $form = $this->createForm(NewsLetterType::class, $newsLetter);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $newsLetter = $form->getData();
+
+            $em->persist($newsLetter);
+            $em->flush();
+        }
 
         return $this->render('vitrine/coworking.html.twig', array(
             'actus'         => $actus,
             'testimonies'   => $testimony,
-            'contrib'       => $contrib
+            'contrib'       => $contrib,
+            'newsletter_form' => $form->createView()
         ));
     }
 
     /**
      * @Route("/Fablab", name="app_fablab")
      */
-    public function fablab()
+    public function fablab(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -110,17 +121,29 @@ class VitrineController extends Controller
         $testimony  = $em->getRepository('App:Testimony')->findBy(['testimonyType' => Testimony::TESTIMONY_TYPE_MAKER]);
         $contrib    = $em->getRepository('App:FablabContrib')->findOneBy(['id' => 2]);
 
+        $newsLetter = new NewsLetter();
+        $form = $this->createForm(NewsLetterType::class, $newsLetter);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $newsLetter = $form->getData();
+
+            $em->persist($newsLetter);
+            $em->flush();
+        }
+
         return $this->render('vitrine/fablab.html.twig', array(
             'actus'         => $actus,
             'testimonies'   => $testimony,
-            'contrib'       => $contrib
+            'contrib'       => $contrib,
+            'newsletter_form' => $form->createView()
         ));
     }
 
     /**
      * @Route("/Formation", name="app_formation")
      */
-    public function formation()
+    public function formation(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -128,11 +151,23 @@ class VitrineController extends Controller
         $contrib    = $em->getRepository('App:FormationContrib')->findOneBy(['id' => 2]);
         $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(1, 3);
 
+        $newsLetter = new NewsLetter();
+        $form = $this->createForm(NewsLetterType::class, $newsLetter);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $newsLetter = $form->getData();
+
+            $em->persist($newsLetter);
+            $em->flush();
+        }
+
 
         return $this->render('vitrine/formation.html.twig', array(
             'actus'         => $actus,
             'testimonies'   => $testimony,
-            'contrib'       => $contrib
+            'contrib'       => $contrib,
+            'newsletter_form' => $form->createView()
         ));
     }
 
