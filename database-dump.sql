@@ -38,7 +38,7 @@ CREATE TABLE `blog_article` (
 
 LOCK TABLES `blog_article` WRITE;
 /*!40000 ALTER TABLE `blog_article` DISABLE KEYS */;
-INSERT INTO `blog_article` VALUES (1,'test','<div>blablabla</div>',NULL,'logo-atelier-formation.png'),(2,'Atelier arduino avec les coworkers','<div>lorem ipsum dolor</div>','2019-08-14 00:00:00','logo-atelier-formation.png'),(3,'Agri-web formation','<div>Ceci est un test - lorem ipsum dolor</div>','2019-11-15 00:00:00','bg_2test(1).jpg'),(4,'kiwi','<div>fxfg s stdy&nbsp; fd</div>',NULL,'IMG_2706.jpg'),(5,'rezop','<div>gds tsdh&nbsp;</div>','2018-05-06 00:00:00','coworking.jpg'),(6,'fsd','<div>sfs</div>',NULL,'bg_2.jpg');
+INSERT INTO `blog_article` VALUES (1,'test','<div>blablabla</div>',NULL,'logo-atelier-formation.png'),(2,'Atelier arduino avec les coworkers','<div>lorem ipsum dolor</div>','2019-08-14 00:00:00','logo-atelier-formation.png'),(3,'Agri-web formation','<div>Ceci est un test - lorem ipsum dolor</div>','2019-11-15 00:00:00','bg_2test1.jpg'),(4,'kiwi','<div>fxfg s stdy&nbsp; fd</div>',NULL,'IMG_2706.jpg'),(5,'rezop','<div>gds tsdh&nbsp;</div>','2018-05-06 00:00:00','coworking.jpg'),(6,'fsd','<div>sfs</div>',NULL,'bg_2.jpg');
 /*!40000 ALTER TABLE `blog_article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,8 +66,88 @@ CREATE TABLE `blog_article_tag` (
 
 LOCK TABLES `blog_article_tag` WRITE;
 /*!40000 ALTER TABLE `blog_article_tag` DISABLE KEYS */;
-INSERT INTO `blog_article_tag` VALUES (2,1),(2,2),(3,3),(4,2),(4,3),(5,1),(6,3);
+INSERT INTO `blog_article_tag` VALUES (2,1),(2,2),(3,3),(4,2),(4,3),(5,1),(6,1),(6,2),(6,3);
 /*!40000 ALTER TABLE `blog_article_tag` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `blog_contrib`
+--
+
+DROP TABLE IF EXISTS `blog_contrib`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blog_contrib` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_banner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `blog_contrib`
+--
+
+LOCK TABLES `blog_contrib` WRITE;
+/*!40000 ALTER TABLE `blog_contrib` DISABLE KEYS */;
+INSERT INTO `blog_contrib` VALUES (1,'bg_1.jpg','Le Blog');
+/*!40000 ALTER TABLE `blog_contrib` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ch_cookieconsent_log`
+--
+
+DROP TABLE IF EXISTS `ch_cookieconsent_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ch_cookieconsent_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cookie_consent_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cookie_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cookie_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `timestamp` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ch_cookieconsent_log`
+--
+
+LOCK TABLES `ch_cookieconsent_log` WRITE;
+/*!40000 ALTER TABLE `ch_cookieconsent_log` DISABLE KEYS */;
+INSERT INTO `ch_cookieconsent_log` VALUES (1,'127.0.0.x','5dbbfc5f85987','analytics','true','2019-11-01 10:35:27'),(2,'127.0.0.x','5dbbfc5f85987','social_media','false','2019-11-01 10:35:27');
+/*!40000 ALTER TABLE `ch_cookieconsent_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'LEo','leo.hugues@hotmail.fr','test',',knlmfqjf poes fpjuhsdf uoh ou');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -85,6 +165,17 @@ CREATE TABLE `coworking_contrib` (
   `video_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_pres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text_pres` longtext COLLATE utf8mb4_unicode_ci,
+  `image_keynumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber1` int(11) DEFAULT NULL,
+  `label_keynumber1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber2` int(11) DEFAULT NULL,
+  `label_keynumber2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber3` int(11) DEFAULT NULL,
+  `label_keynumber3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber4` int(11) DEFAULT NULL,
+  `label_keynumber4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_tarif` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tarifs` longtext COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -95,7 +186,7 @@ CREATE TABLE `coworking_contrib` (
 
 LOCK TABLES `coworking_contrib` WRITE;
 /*!40000 ALTER TABLE `coworking_contrib` DISABLE KEYS */;
-INSERT INTO `coworking_contrib` VALUES (2,'coworking-banner.jpg','Coworking','bg_2-old.jpg','https://www.youtube.com/watch?v=W2KDi63ybhU','Espace de travail partagé','<div>Eviter de faire 1h30 de voiture par jour pour aller à Montpellier pour travailler . Etre plus performant en gérant son temps de travail selon ses besoins personnels. Eviter l\'isolement des travailleurs indépendants / freelances / dirigeants de PME . Se créer un réseau de compétences multiples Permettre d\'accéder plus facilement à la formation notamment dans le secteur du Digital (Web, e-commerce- Marketing digital, réseaux sociaux pro...)</div>');
+INSERT INTO `coworking_contrib` VALUES (2,'coworking-banner.jpg','Coworking','bg_2-old.jpg','https://www.youtube.com/watch?v=W2KDi63ybhU','Espace de travail partagé','<div>Eviter de faire 1h30 de voiture par jour pour aller à Montpellier pour travailler . Etre plus performant en gérant son temps de travail selon ses besoins personnels. Eviter l\'isolement des travailleurs indépendants / freelances / dirigeants de PME . Se créer un réseau de compétences multiples Permettre d\'accéder plus facilement à la formation notamment dans le secteur du Digital (Web, e-commerce- Marketing digital, réseaux sociaux pro...)<br><br>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu turpis sollicitudin ipsum dictum sollicitudin. Cras in velit vel nisl convallis pharetra. Vestibulum convallis euismod magna sit amet aliquet. Quisque luctus elementum ex eget gravida. Proin ut aliquet ligula. Quisque condimentum tristique arcu, quis pretium massa vehicula consequat. Cras auctor tempus turpis vitae viverra. Etiam molestie arcu sed pretium pellentesque. Praesent pharetra nibh id blandit faucibus. Praesent rhoncus sollicitudin elit, in dictum metus consectetur ut.&nbsp;</div>','bg_1.jpg',100,'De bureau partagé',12,'poste de travail',1000,'litre de café',25,'degrés celcius','Nos Tarifs','<div>Nous fonctionnons aujourd\'hui avec un tarif unique de 2 euros par jour ou 50€/mois.<br>Vous devez :<br><br></div><ul><li>Être membre de l\'association</li><li>Vous assurer de la disponibilitée des postes de travail</li><li>Régler le montant avant de commencer...</li></ul>');
 /*!40000 ALTER TABLE `coworking_contrib` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,6 +205,17 @@ CREATE TABLE `fablab_contrib` (
   `video_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_pres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text_pres` longtext COLLATE utf8mb4_unicode_ci,
+  `image_keynumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber1` int(11) DEFAULT NULL,
+  `label_keynumber1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber2` int(11) DEFAULT NULL,
+  `label_keynumber2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber3` int(11) DEFAULT NULL,
+  `label_keynumber3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber4` int(11) DEFAULT NULL,
+  `label_keynumber4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_tarif` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tarifs` longtext COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -124,7 +226,7 @@ CREATE TABLE `fablab_contrib` (
 
 LOCK TABLES `fablab_contrib` WRITE;
 /*!40000 ALTER TABLE `fablab_contrib` DISABLE KEYS */;
-INSERT INTO `fablab_contrib` VALUES (2,'bg_2-old2.jpg','FabLab','IMG_2374.jpg','https://www.youtube.com/watch?v=W2KDi63ybhU','Le FabLab','<div>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu turpis sollicitudin ipsum dictum sollicitudin. Cras in velit vel nisl convallis pharetra. Vestibulum convallis euismod magna sit amet aliquet. Quisque luctus elementum ex eget gravida. Proin ut aliquet ligula. Quisque condimentum tristique arcu, quis pretium massa vehicula consequat. Cras auctor tempus turpis vitae viverra. Etiam molestie arcu sed pretium pellentesque. Praesent pharetra nibh id blandit faucibus. Praesent rhoncus sollicitudin elit, in dictum metus consectetur ut.&nbsp;<br><br></div><div>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sapien at metus aliquet convallis. Pellentesque ac ligula et tortor volutpat dapibus. Morbi auctor vulputate odio vitae vulputate. Fusce vitae vehicula arcu. Integer ultrices mi et justo venenatis, non iaculis ipsum posuere. Sed condimentum, magna vitae condimentum euismod, mi nibh consequat tortor, a malesuada orci metus ut ligula. Aliquam a dui venenatis, finibus magna interdum, elementum leo. Nunc vitae molestie turpis, pharetra lobortis est. Mauris ac ex quis nulla gravida sodales vitae eget ipsum. Integer iaculis convallis diam, quis tincidunt magna ullamcorper ac.&nbsp;<br><br></div><div>&nbsp;Nunc id imperdiet erat, nec porta urna. Donec magna magna, fermentum ut bibendum ac, pellentesque nec magna. Fusce dolor odio, pulvinar sed porttitor eget, venenatis pretium dui. Quisque pretium nunc sit amet lobortis lacinia. Cras ut lacus mauris. Praesent a ligula dapibus, fringilla augue quis, tempor sapien. Phasellus eleifend metus vitae elit commodo euismod. Integer in condimentum quam.&nbsp;<br><br></div>');
+INSERT INTO `fablab_contrib` VALUES (2,'bg_2-old2.jpg','FabLab','bg_2.jpg','https://www.youtube.com/watch?v=W2KDi63ybhU','Le FabLab','<div>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu turpis sollicitudin ipsum dictum sollicitudin. Cras in velit vel nisl convallis pharetra. Vestibulum convallis euismod magna sit amet aliquet. Quisque luctus elementum ex eget gravida. Proin ut aliquet ligula. Quisque condimentum tristique arcu, quis pretium massa vehicula consequat. Cras auctor tempus turpis vitae viverra. Etiam molestie arcu sed pretium pellentesque. Praesent pharetra nibh id blandit faucibus. Praesent rhoncus sollicitudin elit, in dictum metus consectetur ut.&nbsp;<br><br>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu turpis sollicitudin ipsum dictum sollicitudin. Cras in velit vel nisl convallis pharetra. Vestibulum convallis euismod magna sit amet aliquet. Quisque luctus elementum ex eget gravida. Proin ut aliquet ligula. Quisque condimentum tristique arcu, quis pretium massa vehicula consequat. Cras auctor tempus turpis vitae viverra. Etiam molestie arcu sed pretium pellentesque. Praesent pharetra nibh id blandit faucibus. Praesent rhoncus sollicitudin elit, in dictum metus consectetur ut.&nbsp;</div>','bg_1.jpg',200,'D\'atelier partagé',5,'imprimante 3D',1,'Decoup Laser',10,'projets réaliser au LAB','Les Tarifs','<div>Nous fonctionnons aujourd\'hui avec un tarif unique de 2 euros par jour ou 50€/mois.<br>Vous devez :<br><br></div><ul><li>Être membre de l\'association</li><li>Vous assurer de la disponibilitée des postes de travail</li><li>Régler le montant avant de commencer...</li></ul>');
 /*!40000 ALTER TABLE `fablab_contrib` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,6 +245,15 @@ CREATE TABLE `formation_contrib` (
   `video_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_pres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text_pres` longtext COLLATE utf8mb4_unicode_ci,
+  `image_keynumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber1` int(11) DEFAULT NULL,
+  `label_keynumber1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber2` int(11) DEFAULT NULL,
+  `label_keynumber2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber3` int(11) DEFAULT NULL,
+  `label_keynumber3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber4` int(11) DEFAULT NULL,
+  `label_keynumber4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -153,7 +264,7 @@ CREATE TABLE `formation_contrib` (
 
 LOCK TABLES `formation_contrib` WRITE;
 /*!40000 ALTER TABLE `formation_contrib` DISABLE KEYS */;
-INSERT INTO `formation_contrib` VALUES (2,'bg_1.jpg','Formation','IMG_2706.jpg','https://www.youtube.com/watch?v=W2KDi63ybhU','Formation','<div> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu turpis sollicitudin ipsum dictum sollicitudin. Cras in velit vel nisl convallis pharetra. Vestibulum convallis euismod magna sit amet aliquet. Quisque luctus elementum ex eget gravida. Proin ut aliquet ligula. Quisque condimentum tristique arcu, quis pretium massa vehicula consequat. Cras auctor tempus turpis vitae viverra. Etiam molestie arcu sed pretium pellentesque. Praesent pharetra nibh id blandit faucibus. Praesent rhoncus sollicitudin elit, in dictum metus consectetur ut.&nbsp;<br><br></div><div>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sapien at metus aliquet convallis. Pellentesque ac ligula et tortor volutpat dapibus. Morbi auctor vulputate odio vitae vulputate. Fusce vitae vehicula arcu. Integer ultrices mi et justo venenatis, non iaculis ipsum posuere. Sed condimentum, magna vitae condimentum euismod, mi nibh consequat tortor, a malesuada orci metus ut ligula. Aliquam a dui venenatis, finibus magna interdum, elementum leo. Nunc vitae molestie turpis, pharetra lobortis est. Mauris ac ex quis nulla gravida sodales vitae eget ipsum. Integer iaculis convallis diam, quis tincidunt magna ullamcorper ac.&nbsp;<br><br></div><div>&nbsp;Nunc id imperdiet erat, nec porta urna. Donec magna magna, fermentum ut bibendum ac, pellentesque nec magna. Fusce dolor odio, pulvinar sed porttitor eget, venenatis pretium dui. Quisque pretium nunc sit amet lobortis lacinia. Cras ut lacus mauris. Praesent a ligula dapibus, fringilla augue quis, tempor sapien. Phasellus eleifend metus vitae elit commodo euismod. Integer in condimentum quam.&nbsp;<br><br></div>');
+INSERT INTO `formation_contrib` VALUES (2,'bg_1.jpg','Formation','IMG_2706.jpg','https://www.youtube.com/watch?v=W2KDi63ybhU','Formation','<div>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu turpis sollicitudin ipsum dictum sollicitudin. Cras in velit vel nisl convallis pharetra. Vestibulum convallis euismod magna sit amet aliquet. Quisque luctus elementum ex eget gravida. Proin ut aliquet ligula. Quisque condimentum tristique arcu, quis pretium massa vehicula consequat. Cras auctor tempus turpis vitae viverra. Etiam molestie arcu sed pretium pellentesque. Praesent pharetra nibh id blandit faucibus. Praesent rhoncus sollicitudin elit, in dictum metus consectetur ut.&nbsp;<br><br></div><div>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sapien at metus aliquet convallis. Pellentesque ac ligula et tortor volutpat dapibus. Morbi auctor vulputate odio vitae vulputate. Fusce vitae vehicula arcu. Integer ultrices mi et justo venenatis, non iaculis ipsum posuere. Sed condimentum, magna vitae condimentum euismod, mi nibh consequat tortor, a malesuada orci metus ut ligula. Aliquam a dui venenatis, finibus magna interdum, elementum leo. Nunc vitae molestie turpis, pharetra lobortis est. Mauris ac ex quis nulla gravida sodales vitae eget ipsum. Integer iaculis convallis diam, quis tincidunt magna ullamcorper ac.&nbsp;<br><br></div><div>&nbsp;Nunc id imperdiet erat, nec porta urna. Donec magna magna, fermentum ut bibendum ac, pellentesque nec magna. Fusce dolor odio, pulvinar sed porttitor eget, venenatis pretium dui. Quisque pretium nunc sit amet lobortis lacinia. Cras ut lacus mauris. Praesent a ligula dapibus, fringilla augue quis, tempor sapien. Phasellus eleifend metus vitae elit commodo euismod. Integer in condimentum quam.&nbsp;<br><br></div>','bg_1.jpg',10,'formateurs de différent domaine',300,'formations déjà dispensé',2,'formation par semaine',50,'livres disponibles pour se former');
 /*!40000 ALTER TABLE `formation_contrib` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,8 +288,32 @@ CREATE TABLE `migration_versions` (
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20190924143901','2019-09-24 14:46:10'),('20190926111331','2019-09-26 11:13:48'),('20190927142254','2019-09-27 14:24:32'),('20190927153242','2019-09-27 15:32:49'),('20190927161604','2019-09-27 16:16:12'),('20191002111919','2019-10-02 11:19:37'),('20191002132530','2019-10-02 13:25:44');
+INSERT INTO `migration_versions` VALUES ('20190924143901','2019-09-24 14:46:10'),('20190926111331','2019-09-26 11:13:48'),('20190927142254','2019-09-27 14:24:32'),('20190927153242','2019-09-27 15:32:49'),('20190927161604','2019-09-27 16:16:12'),('20191002111919','2019-10-02 11:19:37'),('20191002132530','2019-10-02 13:25:44'),('20191011142644','2019-10-11 14:26:59'),('20191012083000','2019-10-12 08:30:17'),('20191012084859','2019-10-12 08:49:28'),('20191030131455','2019-10-30 13:16:02'),('20191101102819','2019-11-01 10:28:42'),('20191101104239','2019-11-01 10:43:20'),('20191105144750','2019-11-05 14:48:04'),('20191106133952','2019-11-06 13:40:00'),('20191107101831','2019-11-07 10:18:46'),('20191107202143','2019-11-07 20:21:51');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `news_letter`
+--
+
+DROP TABLE IF EXISTS `news_letter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `news_letter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `news_letter`
+--
+
+LOCK TABLES `news_letter` WRITE;
+/*!40000 ALTER TABLE `news_letter` DISABLE KEYS */;
+INSERT INTO `news_letter` VALUES (1,'leo.hugues@hotmail.fr');
+/*!40000 ALTER TABLE `news_letter` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -217,10 +352,10 @@ CREATE TABLE `slide_contrib` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `legend` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `label_button` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   `published` tinyint(1) DEFAULT NULL,
+  `button` longtext COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -231,7 +366,7 @@ CREATE TABLE `slide_contrib` (
 
 LOCK TABLES `slide_contrib` WRITE;
 /*!40000 ALTER TABLE `slide_contrib` DISABLE KEYS */;
-INSERT INTO `slide_contrib` VALUES (1,'L\'Atelier de Claret','Imaginer le monde de demain','C\'est parti !','bg_1.jpg',1,1),(2,NULL,NULL,'Je participe !','bg_2.jpg',2,0),(3,'test','d','test','IMG_2374.jpg',1,1);
+INSERT INTO `slide_contrib` VALUES (1,'L\'Atelier de Claret','Imaginer le monde de demain','bg_1.jpg',1,1,'<iframe id=\"haWidget\" allowtransparency=\"true\" src=\"https://www.helloasso.com/associations/atelier-de-claret/adhesions/atelier-de-claret-adhesions-2020/widget-bouton\" style=\"width:100%;height:70px;border:none;\"></iframe>'),(2,'FabLab','Crowdfunding','bg_2.jpg',2,1,'<iframe id=\"haWidget\" allowtransparency=\"true\" src=\"https://www.helloasso.com/associations/atelier%20de%20claret/collectes/atelier-de-claret/widget-bouton\" style=\"width:100%;height:70px;border:none;\"></iframe>'),(3,'test','d','IMG_2374.jpg',1,0,'<iframe id=\"haWidget\" allowtransparency=\"true\" src=\"https://www.helloasso.com/associations/atelier%20de%20claret/collectes/atelier-de-claret/widget-bouton\" style=\"width:100%;height:70px;border:none;\"></iframe>');
 /*!40000 ALTER TABLE `slide_contrib` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,6 +407,7 @@ CREATE TABLE `testimony` (
   `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `testimony_type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -282,7 +418,7 @@ CREATE TABLE `testimony` (
 
 LOCK TABLES `testimony` WRITE;
 /*!40000 ALTER TABLE `testimony` DISABLE KEYS */;
-INSERT INTO `testimony` VALUES (1,'Jean-Philipe DUMAT','FREELANCE','L\'atelier est un endroit super pour expérimenter...','person_4.jpg'),(2,'Jaque C','Peintre','Lorem ipsum dolor','person_2.jpg'),(3,'Antonin B','Menuisier','Lorem ipsum dolor','person_1.jpg'),(5,'Didier P','Retraité !','Lorem ipsum dolor','person_3.jpg');
+INSERT INTO `testimony` VALUES (1,'Jean-Philipe DUMAT','FREELANCE','L\'atelier est un endroit super pour expérimenter...','person_4.jpg',3),(2,'Jaque C','Peintre','Lorem ipsum dolor','person_2.jpg',0),(3,'Antonin B','Menuisier','Lorem ipsum dolor','person_1.jpg',2),(5,'Didier P','Retraité !','Lorem ipsum dolor','person_3.jpg',1);
 /*!40000 ALTER TABLE `testimony` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,4 +458,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-04 12:39:18
+-- Dump completed on 2019-11-08 12:20:06
