@@ -100,15 +100,15 @@ easy_admin:
             form:
                 title: "Mettre à jour la page coworking"
                 fields:
+                    - { type: 'group', columns: 12, label: "Contenu" }
+                    - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
+                    - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Entête" }
                     - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/coworking', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { type: 'section', label: "Image de présentation et Vidéo" }
                     - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/coworking', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
-                    - { type: 'group', columns: 6, label: "Contenu" }
-                    - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
-                    - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
                     - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/coworking', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
@@ -119,7 +119,7 @@ easy_admin:
                     - { property: 'labelKeynumber3', type: 'text', label: 'Label du chiffre clé n°3' }
                     - { property: 'keynumber4', type: 'integer', label: 'Chiffre clé n°4' }
                     - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
-                    - { type: 'group', columns: 6, label: "Section Tarifs" }
+                    - { type: 'group', columns: 12, label: "Section Tarifs" }
                     - { property: 'titleTarif', type: 'text', label: 'Titre de la section Tarif' }
                     - { property: 'tarifs', type: 'fos_ckeditor', label: 'Contenu de la section Tarif' }
 
@@ -131,14 +131,15 @@ easy_admin:
             form:
                 title: "Mettre à jour la page FabLab"
                 fields:
-                    - { type: 'group', columns: 12, label: "Entête" }
-                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/fablab', label: "Image d'entête"}
-                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
-                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/fablab', label: "Image vidéo"}
-                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 12, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
+                    - { type: 'group', columns: 6, label: "Entête" }
+                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/fablab', label: "Image d'entête"}
+                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
+                    - { type: 'section', label: "Image de présentation et Vidéo" }
+                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/fablab', label: "Image vidéo"}
+                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
                     - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/fablab', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
@@ -160,14 +161,15 @@ easy_admin:
             form:
                 title: "Mettre à jour la page Formation"
                 fields:
-                    - { type: 'group', columns: 12, label: "Entête" }
-                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête"}
-                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
-                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/formation', label: "Image vidéo"}
-                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 12, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
+                    - { type: 'group', columns: 6, label: "Entête" }
+                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête"}
+                    - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
+                    - { type: 'section', label: "Image de présentation et Vidéo" }
+                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/formation', label: "Image vidéo"}
+                    - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
                     - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/formation', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
