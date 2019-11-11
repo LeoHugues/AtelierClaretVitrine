@@ -6,6 +6,16 @@ easy_admin:
         display_avatar: false
 
     design:
+        brand_color: '#aa3e98'
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@VichUploader/Form/fields.html.twig'
+
+        assets:
+            js:
+                - '/bundles/cksourceckfinder/ckfinder/ckfinder.js'
+                - '/js/setup-ckfinder.js'
+
         menu:
             - { label: 'Pages web'}
             - label: "Accueil"
@@ -32,9 +42,7 @@ easy_admin:
             - { label: 'Accéder au Site', route: 'app_home', icon: 'external-link-square', target: '_blank'}
             #- { label: 'Mettre le site en maintenance', route: 'app_busy', icon: 'external-link-square', target: '_blank'}
 
-        brand_color: '#aa3e98'
-        form_theme:
-            - '@EasyAdmin/form/bootstrap_4.html.twig'
+
 
     entities:
         SlideContrib:
@@ -188,12 +196,12 @@ easy_admin:
             form:
                 title: "Ajouter un article"
                 fields:
-                    - { type: 'group', columns: 6, label: "Contenu" }
+                    - { type: 'group', columns: 12, label: "Contenu" }
                     - { property: 'title', type: 'text'}
-                    - { property: 'text', type: 'text_editor'}
-                    - { type: 'group', columns: 6, label: "Réglage" }
-                    - { property: 'tags', type: 'easyadmin_autocomplete'}
+                    - { property: 'text', type: 'fos_ckeditor' , type_options:{ 'config': { 'toolbar': 'full' } }}
+                    - { type: 'group', columns: 12, label: "Réglage" }
                     - { property: 'imgFile', type: 'vich_image', base_path: '/images/blog'}
+                    - { property: 'tags', type: 'easyadmin_autocomplete'}
                     - { property: 'publicationDate', type: 'date'}
 
             list:

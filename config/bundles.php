@@ -19,4 +19,5 @@ return [
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     ConnectHolland\CookieConsentBundle\CHCookieConsentBundle::class => ['all' => true],
     Beelab\Recaptcha2Bundle\BeelabRecaptcha2Bundle::class => ['all' => true],
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
 ];
