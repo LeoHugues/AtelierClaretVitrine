@@ -108,7 +108,7 @@ easy_admin:
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
-                    - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+                    - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
                     - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/coworking', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
@@ -121,7 +121,7 @@ easy_admin:
                     - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
                     - { type: 'group', columns: 6, label: "Section Tarifs" }
                     - { property: 'titleTarif', type: 'text', label: 'Titre de la section Tarif' }
-                    - { property: 'tarifs', type: 'text_editor', label: 'Contenu de la section Tarif' }
+                    - { property: 'tarifs', type: 'fos_ckeditor', label: 'Contenu de la section Tarif' }
 
 
         FablabContrib:
@@ -138,7 +138,7 @@ easy_admin:
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
-                    - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+                    - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
                     - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/fablab', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
@@ -151,7 +151,7 @@ easy_admin:
                     - { property: 'labelKeynumber4', type: 'text', label: 'Label du chiffre clé n°4' }
                     - { type: 'group', columns: 6, label: "Section Tarifs" }
                     - { property: 'titleTarif', type: 'text', label: 'Titre de la section Tarif' }
-                    - { property: 'tarifs', type: 'text_editor', label: 'Contenu de la section Tarif' }
+                    - { property: 'tarifs', type: 'fos_ckeditor', label: 'Contenu de la section Tarif' }
 
         FormationContrib:
             class: App\Entity\FormationContrib
@@ -167,7 +167,7 @@ easy_admin:
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Contenu" }
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
-                    - { property: 'textPres', type: 'text_editor', label: 'Texte de présentation' }
+                    - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
                     - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/formation', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
