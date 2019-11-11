@@ -9,7 +9,6 @@ easy_admin:
         brand_color: '#aa3e98'
         form_theme:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
-            - '@VichUploader/Form/fields.html.twig'
 
         assets:
             js:
