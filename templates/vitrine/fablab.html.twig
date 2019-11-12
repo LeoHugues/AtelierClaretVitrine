@@ -5,7 +5,7 @@
 
 {% block body %}
 
-    <div class="hero-wrap hero-bread" style="background-image: url('{{asset(['images/fablab/', contrib.imageHeader]|join)}}');">
+    <div class="hero-wrap hero-bread" style="background-image: url('{{asset(contrib.imageHeader)}}');">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
@@ -18,7 +18,7 @@
     <section class="ftco-section ftco-no-pb ftco-no-pt">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset(['images/fablab/', contrib.imageVideo]|join )}});">
+                <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset(contrib.imageVideo)}});">
                     <a href="{{ contrib.videoLink }}?autoplay=1&rel=0" class="icon popup-vimeo d-flex justify-content-center align-items-center">
                         <span class="icon-play"></span>
                     </a>
@@ -59,7 +59,7 @@
     </section>
 
 
-    <section class="ftco-section" id="actu-section" style="background-image: url({{ asset('images/home/logo-bg-atelier.png')}});">
+    <section class="ftco-section" id="actu-section" style="background-image: url({{ asset('userfiles/contrib/home/logo-bg-atelier.png')}});">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center mb-5">
@@ -69,7 +69,7 @@
                     <div class="sidebar-box ftco-animate">
                         {% for actu in actus %}
                             <div class="block-21 mb-4 d-flex bg-light">
-                                <a class="blog-img mr-4" href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}" style="background-image: url({{asset(['images/blog/', actu.filename] | join )}});"></a>
+                                <a class="blog-img mr-4" href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}" style="background-image: url({{asset(actu.filename)}});"></a>
                                 <div class="text">
                                     <h3 class="heading-1"><a href="{{ path('app_blog_article_show', {'idArticle' : actu.id}) }}">{{ actu.title }}</a></h3>
                                     <div class="meta">
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({{asset(['images/fablab/', contrib.imageKeynumber] | join)}});">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({{asset(contrib.imageKeynumber)}});">
         <div class="container">
             <div class="row justify-content-center py-5">
                 <div class="col-md-10">
@@ -152,7 +152,7 @@
                         {% for testimony in testimonies %}
                             <div class="item">
                                 <div class="testimony-wrap p-4 pb-5">
-                                    <div class="user-img mb-5" style="background-image: url({{ asset(['images/home/testimony/', testimony.image]|join) }})">
+                                    <div class="user-img mb-5" style="background-image: url({{ asset(testimony.image) }})">
                                         <span class="quote d-flex align-items-center justify-content-center">
                                           <i class="icon-quote-left"></i>
                                         </span>
