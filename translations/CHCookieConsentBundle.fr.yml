@@ -8,6 +8,6 @@ ch_cookie_consent:
   social_media:
     title: 'Acceptez-vous les cookies des réseaux sociaux ?'
     description: "Ils nous permettent d'en savoir un peu plus sur vous et d'améliorer votre navigation"
-  no: 'Oui'
-  yes: 'Non'
+  no: 'Non'
+  yes: 'Oui'
   save: 'Enregistrer'
