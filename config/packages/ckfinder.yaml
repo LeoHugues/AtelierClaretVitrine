@@ -1,0 +1,8 @@
+ckfinder:
+  connector:
+    authenticationClass: App\CustomCKFinderAuth\CustomCKFinderAuth
+    resourceTypes:
+      Images:
+        name: contrib
+        backend: default
+        directory: contrib

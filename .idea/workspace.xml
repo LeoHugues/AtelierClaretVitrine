@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/userfiles/contrib/blog/IMG_2706.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AtelierClaretVitrine.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -9,8 +10,45 @@
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/IMG_2706.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/formation/IMG_2706.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/bg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/blog/bg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/bg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/blog/bg_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/bg_2test1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/blog/bg_2test1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/coworking.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/blog/coworking.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/blog/logo-atelier-formation.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/blog/logo-atelier-formation.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/coworking/IMG_2706.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/coworking/IMG_2706.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/coworking/bg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/coworking/bg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/coworking/bg_2-old.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/coworking/bg_2-old.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/coworking/coworking-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/coworking/coworking-banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fablab/bg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/fablab/bg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fablab/bg_2-old2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/fablab/bg_2-old2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fablab/bg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/fablab/bg_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/formation/IMG_2706.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/partner/IMG_2706.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/formation/bg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/formation/bg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/carousel/IMG_2374.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/carousel/IMG_2374.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/carousel/bg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/carousel/bg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/carousel/bg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/carousel/bg_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/logo-bg-atelier.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/logo-bg-atelier.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/partner/1200px-Flag_of_Europe.svg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/partner/1200px-Flag_of_Europe.svg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/partner/IMG_2706.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/partner/La_Poste_logo.svg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/partner/La_Poste_logo.svg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/partner/bg_2-old.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/partner/bg_2-old.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/partner/coworking-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/partner/coworking-banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/partner/laregion-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/partner/laregion-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/testimony/person_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/testimony/person_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/testimony/person_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/testimony/person_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/testimony/person_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/testimony/person_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/testimony/person_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/userfiles/contrib/home/testimony/person_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BlogArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BlogArticle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/adhesion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/adhesion.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/blog.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/coworking.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/fablab.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/formation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vitrine/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vitrine/home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +199,13 @@
       <path value="$PROJECT_DIR$/vendor/beelab/recaptcha2-bundle" />
       <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-cached-adapter" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/ckfinder-symfony-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1QuaK7sPQ9cRxpeULOttUUxIVfG" />
@@ -175,19 +220,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/userfiles/contrib" />
+      <recent name="$PROJECT_DIR$/public/userfiles" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/bundle" />
+      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images/home" />
       <recent name="$PROJECT_DIR$/templates/bundles/CHCookieConsentBundle" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src/Repository" />
       <recent name="$PROJECT_DIR$/public/images/coworking" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/bundle" />
-      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle" />
-      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle/template" />
-      <recent name="$PROJECT_DIR$/templates/CHCookieConsentBundle/views" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -263,6 +308,7 @@
       <workItem from="1573033845364" duration="10494000" />
       <workItem from="1573116112222" duration="7351000" />
       <workItem from="1573138591633" duration="9555000" />
+      <workItem from="1573545796206" duration="19930000" />
     </task>
     <servers />
   </component>

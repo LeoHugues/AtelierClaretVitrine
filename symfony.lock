@@ -1,4 +1,7 @@
 {
+    "aws/aws-sdk-php": {
+        "version": "3.115.2"
+    },
     "beelab/recaptcha2-bundle": {
         "version": "2.0",
         "recipe": {
@@ -13,6 +16,9 @@
     },
     "behat/transliterator": {
         "version": "v1.2.0"
+    },
+    "ckfinder/ckfinder-symfony-bundle": {
+        "version": "3.5.1"
     },
     "connectholland/cookie-consent-bundle": {
         "version": "0.4",
@@ -182,8 +188,20 @@
     "knplabs/knp-paginator-bundle": {
         "version": "v4.0.0"
     },
+    "league/flysystem": {
+        "version": "1.0.57"
+    },
+    "league/flysystem-aws-s3-v3": {
+        "version": "1.0.23"
+    },
+    "league/flysystem-cached-adapter": {
+        "version": "1.0.9"
+    },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.4.0"
     },
     "nikic/php-parser": {
         "version": "v4.2.1"
@@ -202,6 +220,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "pimple/pimple": {
+        "version": "v3.2.3"
     },
     "psr/cache": {
         "version": "1.0.1"

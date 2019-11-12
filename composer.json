@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "beelab/recaptcha2-bundle": "^2.1",
+        "ckfinder/ckfinder-symfony-bundle": "^3.5",
         "connectholland/cookie-consent-bundle": "^0.7.0",
         "easycorp/easyadmin-bundle": "^2.3",
         "friendsofsymfony/ckeditor-bundle": "^2.1",

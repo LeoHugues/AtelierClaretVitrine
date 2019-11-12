@@ -12,6 +12,7 @@ easy_admin:
 
         assets:
             js:
+                - '/bundles/fosckeditor/ckeditor.js'
                 - '/bundles/cksourceckfinder/ckfinder/ckfinder.js'
                 - '/js/setup-ckfinder.js'
 
@@ -53,14 +54,14 @@ easy_admin:
                     - { type: 'group', columns: 6, label: "Entête" }
                     - { property: 'title', type: 'text', label: 'Titre de la slide' }
                     - { property: 'legend', type: 'text', label: 'Légende' }
-                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/carousel' }
+                    - { property: 'image', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType'}
                     - { type: 'group', columns: 6, label: "Réglage" }
                     - { property: 'button', type: 'text', label: 'Bouton iFrame'}
                     - { property: 'priority', type: 'integer', label: 'Priorité'}
                     - { property: 'published', label: 'Publier'}
             list:
                 title: "Les Slides"
-                fields: ['id', 'title', 'priority', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/carousel' }, 'published']
+                fields: ['id', 'title', 'priority', { property: 'image', type: 'image', height: 'lg', base_path: '/' }, 'published']
 
         Testimony:
             class: App\Entity\Testimony
@@ -73,13 +74,12 @@ easy_admin:
                     - { property: 'position', type: 'text', label: 'Métier / Position' }
                     - { property: 'text', type: 'text', label: 'citation' }
                     - { type: 'group', columns: 6, label: "Réglage" }
-                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/testimony'}
+                    - { property: 'image', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType'}
                     - { property: 'testimonyType', type: 'choice', type_options: { mapped: true, expanded: true, multiple: false, choices: { 'Maker': 0, 'Coworker': 1, 'Formateur': 2, 'Irreductible': 3 }}}
             list:
                 title: "Les Irreductibles"
-                fields: ['id', 'fullname', 'position', 'TestimonyLabel', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/testimony' }]
-            edit:
-                title: "Modifier un Irréductible"
+                fields: ['id', 'fullname', 'position', 'TestimonyLabel', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/' }]
+
 
         Partner:
             class: App\Entity\Partner
@@ -88,10 +88,10 @@ easy_admin:
                 title: "Ajouter un partenaire"
                 fields:
                     - { property: 'link', type: 'text', label: 'Lien de redirection' }
-                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/home/partner'}
+                    - { property: 'image', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType'}
             list:
                 title: "Les Partenaires"
-                fields: ['id', 'link', { property: 'image', type: 'image', height: 'lg', base_path: '/images/home/partner' }]
+                fields: ['id', 'link', { property: 'image', type: 'image', height: 'lg', base_path: '/' }]
 
         CoworkingContrib:
             class: App\Entity\CoworkingContrib
@@ -104,13 +104,13 @@ easy_admin:
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Entête" }
-                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/coworking', label: "Image d'entête"}
+                    - { property: 'imageHeader', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { type: 'section', label: "Image de présentation et Vidéo" }
-                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/coworking', label: "Image vidéo"}
+                    - { property: 'imageVideo', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
-                    - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/coworking', label: "Image banierre des chiffres clé"}
+                    - { property: 'imageKeynumber', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
                     - { property: 'labelKeynumber1', type: 'text', label: 'Label du chiffre clé n°1' }
                     - { property: 'keynumber2', type: 'integer', label: 'Chiffre clé n°2' }
@@ -135,13 +135,13 @@ easy_admin:
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Entête" }
-                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/fablab', label: "Image d'entête"}
+                    - { property: 'imageHeader', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { type: 'section', label: "Image de présentation et Vidéo" }
-                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/fablab', label: "Image vidéo"}
+                    - { property: 'imageVideo', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
-                    - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/fablab', label: "Image banierre des chiffres clé"}
+                    - { property: 'imageKeynumber', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
                     - { property: 'labelKeynumber1', type: 'text', label: 'Label du chiffre clé n°1' }
                     - { property: 'keynumber2', type: 'integer', label: 'Chiffre clé n°2' }
@@ -165,13 +165,13 @@ easy_admin:
                     - { property: 'titlePres', type: 'text', label: 'Titre de présentation' }
                     - { property: 'textPres', type: 'fos_ckeditor', label: 'Texte de présentation' }
                     - { type: 'group', columns: 6, label: "Entête" }
-                    - { property: 'imgHeaderFile', type: 'vich_image', base_path: '/images/formation', label: "Image d'entête"}
+                    - { property: 'imageHeader', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image d'entête"}
                     - { property: 'titleHeader', type: 'text', label: 'Titre entête' }
                     - { type: 'section', label: "Image de présentation et Vidéo" }
-                    - { property: 'imgVideoFile', type: 'vich_image', base_path: '/images/formation', label: "Image vidéo"}
+                    - { property: 'imageVideo', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image vidéo"}
                     - { property: 'videoLink', type: 'text', label: 'Lien de la vidéo' }
                     - { type: 'group', columns: 6, label: "Chiffre clé" }
-                    - { property: 'imageKeynumberFile', type: 'vich_image', base_path: '/images/formation', label: "Image banierre des chiffres clé"}
+                    - { property: 'imageKeynumber', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image banierre des chiffres clé"}
                     - { property: 'keynumber1', type: 'integer', label: 'Chiffre clé n°1' }
                     - { property: 'labelKeynumber1', type: 'text', label: 'Label du chiffre clé n°1' }
                     - { property: 'keynumber2', type: 'integer', label: 'Chiffre clé n°2' }
@@ -188,7 +188,7 @@ easy_admin:
             form:
                 title: "Mettre à jour la page Blog"
                 fields:
-                    - { property: 'imageBannerFile', type: 'vich_image', base_path: '/images/blog', label: "Image d'entête (banniere)"}
+                    - { property: 'imageBanner', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType', label: "Image d'entête (banniere)"}
                     - { property: 'titleBanner', type: 'text', label: 'Titre entête' }
 
         BlogArticle:
@@ -201,13 +201,13 @@ easy_admin:
                     - { property: 'title', type: 'text'}
                     - { property: 'text', type: 'fos_ckeditor' , type_options:{ 'config': { 'toolbar': 'full' } }}
                     - { type: 'group', columns: 12, label: "Réglage" }
-                    - { property: 'imgFile', type: 'vich_image', base_path: '/images/blog'}
+                    - { property: 'filename', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType'}
                     - { property: 'tags', type: 'easyadmin_autocomplete'}
                     - { property: 'publicationDate', type: 'date'}
 
             list:
-                title: "Article les plus récent"
-                fields: ['id', 'title', 'publicationDate', { property: 'filename', type: 'image', height: 'lg', base_path: '/images/blog' }]
+                title: "Articles les plus récents"
+                fields: ['id', 'title', 'publicationDate', { property: 'filename', type: 'image', height: 'lg', base_path: '/' }]
 
             edit:
                 title: "Modifier l'article"
