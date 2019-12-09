@@ -1,6 +1,6 @@
 ckfinder:
   connector:
-    licenseName: '%env(LISCENCE_NAME))%'
+    licenseName: '%env(LISCENCE_NAME)%'
     licenseKey: '%env(LISCENCE_KEY)%'
     authenticationClass: App\CustomCKFinderAuth\CustomCKFinderAuth
     resourceTypes:
