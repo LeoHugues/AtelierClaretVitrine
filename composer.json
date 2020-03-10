@@ -9,28 +9,28 @@
         "ckfinder/ckfinder-symfony-bundle": "^3.5",
         "connectholland/cookie-consent-bundle": "^0.7.0",
         "easycorp/easyadmin-bundle": "^2.3",
-        "friendsofsymfony/ckeditor-bundle": "^2.1",
+        "friendsofsymfony/ckeditor-bundle": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
         "knplabs/knp-paginator-bundle": "^4.0",
         "sensio/framework-extra-bundle": "^5.1",
-        "symfony/asset": "4.2.*",
-        "symfony/console": "4.2.*",
-        "symfony/dotenv": "4.2.*",
-        "symfony/expression-language": "4.2.*",
+        "symfony/asset": "4.4.*",
+        "symfony/console": "4.4.*",
+        "symfony/dotenv": "4.4.*",
+        "symfony/expression-language": "4.4.*",
         "symfony/flex": "^1.1",
-        "symfony/form": "4.2.*",
-        "symfony/framework-bundle": "4.2.*",
+        "symfony/form": "4.4.*",
+        "symfony/framework-bundle": "4.4.*",
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "^1.0",
-        "symfony/process": "4.2.*",
-        "symfony/security-bundle": "4.2.*",
+        "symfony/process": "4.4.*",
+        "symfony/security-bundle": "4.4.*",
         "symfony/serializer-pack": "*",
         "symfony/swiftmailer-bundle": "^3.1",
-        "symfony/translation": "4.2.*",
-        "symfony/twig-bundle": "4.2.*",
-        "symfony/validator": "4.2.*",
-        "symfony/web-link": "4.2.*",
-        "symfony/yaml": "4.2.*",
+        "symfony/translation": "4.4.*",
+        "symfony/twig-bundle": "4.4.*",
+        "symfony/validator": "4.4.*",
+        "symfony/web-link": "4.4.*",
+        "symfony/yaml": "4.4.*",
         "twig/extensions": "^1.5",
         "vich/uploader-bundle": "^1.10"
     },
@@ -39,7 +39,7 @@
         "symfony/maker-bundle": "^1.13",
         "symfony/profiler-pack": "*",
         "symfony/test-pack": "*",
-        "symfony/web-server-bundle": "4.2.*"
+        "symfony/web-server-bundle": "4.4.*"
     },
     "config": {
         "preferred-install": {
@@ -83,7 +83,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.2.*"
+            "require": "4.4.*"
         }
     }
 }
