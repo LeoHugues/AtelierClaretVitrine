@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TagRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\TestimonyTypeRepository")
  */
-class Tag
+class TestimonyType
 {
     /**
      * @ORM\Id()
@@ -24,19 +24,20 @@ class Tag
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\BlogArticle", mappedBy="tags")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Testimony", mappedBy="testimonyType")
      */
-    private $articles;
+    private $testimonies;
 
     public function __construct()
     {
-        $this->articles = new ArrayCollection();
+        $this->testimonies = new ArrayCollection();
     }
 
     public function __toString()
     {
         return $this->getName();
     }
+
 
     public function getId(): ?int
     {
@@ -56,27 +57,25 @@ class Tag
     }
 
     /**
-     * @return Collection|BlogArticle[]
+     * @return Collection|Tag[]
      */
-    public function getArticles(): Collection
+    public function getTestimonies(): Collection
     {
-        return $this->articles;
+        return $this->testimonies;
     }
 
-    public function addArticle(BlogArticle $article): self
+    public function addTestimony(Testimony $testimony): self
     {
-        if (!$this->articles->contains($article)) {
-            $this->articles[] = $article;
-            $article->addTag($this);
+        if (!$this->testimonies->contains($testimony)) {
+            $this->testimonies[] = $testimony;
         }
         return $this;
     }
 
-    public function removeArticle(BlogArticle $article): self
+    public function removeTestimony(Testimony $testimony): self
     {
-        if ($this->articles->contains($article)) {
-            $this->articles->removeElement($article);
-            $article->removeTag($this);
+        if ($this->testimonies->contains($testimony)) {
+            $this->testimonies->removeElement($testimony);
         }
         return $this;
     }

@@ -30,7 +30,8 @@ easy_admin:
                 - { entity: 'CoworkingContrib', params: { action: 'edit', id: 2 },  label: 'Page Coworking', icon: 'coffee'}
                 - { entity: 'FablabContrib', params: { action: 'edit', id: 2 }, label: 'Page FabLab', icon: 'wrench'}
                 - { entity: 'FormationContrib', params: { action: 'edit', id: 2 }, label: 'Page Formation', icon: 'certificate'}
-            - { entity: "Testimony", label: 'Les Membres', icon: 'users'}
+            - { entity: "Testimony", label: 'Témoignages', icon: 'users'}
+            - { entity: "TestimonyType", label: 'Rôles', icon: 'users'}
             - { label: 'Le Blog'}
             - { entity: 'BlogArticle', params: { action: 'new' }, label: 'Ajouter un article', icon: 'plus'}
             - { entity: 'BlogArticle', label: 'Nos articles', icon: 'book'}
@@ -68,9 +69,9 @@ easy_admin:
 
         Testimony:
             class: App\Entity\Testimony
-            label: "Les Membres"
+            label: "Témoignage"
             form:
-                title: "Ajouter un Membres"
+                title: "Ajouter un Témoignage"
                 fields:
                     - { type: 'group', columns: 6, label: "Contenue" }
                     - { property: 'fullname', type: 'text', label: 'Nom et prénom' }
@@ -78,10 +79,22 @@ easy_admin:
                     - { property: 'text', type: 'text', label: 'citation' }
                     - { type: 'group', columns: 6, label: "Réglage" }
                     - { property: 'image', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType'}
-                    - { property: 'testimonyType', type: 'choice', type_options: { mapped: true, expanded: true, multiple: false, choices: { 'Maker': 0, 'Coworker': 1, 'Formateur': 2, 'Irreductible': 3 }}}
+                    - { property: 'testimonyType', type: 'easyadmin_autocomplete'}
             list:
                 title: "Les Irreductibles"
                 fields: ['id', 'fullname', 'position', 'TestimonyLabel', 'text', { property: 'image', type: 'image', height: 'lg', base_path: '/' }]
+
+        TestimonyType:
+            class: App\Entity\TestimonyType
+            label: "Rôle"
+            form:
+                title: "Ajouter un rôle"
+                fields:
+                    - { property: 'name', type: 'text', label: 'Rôle' }
+
+            list:
+                title: "Les Irreductibles"
+                fields: ['id', 'name']
 
 
         Partner:

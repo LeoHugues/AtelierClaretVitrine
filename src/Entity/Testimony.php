@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -52,9 +54,14 @@ class Testimony
     private $imgFile;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\ManyToMany(targetEntity="App\Entity\TestimonyType", inversedBy="testimonies")
      */
     private $testimonyType;
+
+    public function __construct()
+    {
+        $this->testimonyType = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -126,33 +133,40 @@ class Testimony
     }
 
     /**
-     * @return mixed
+     * @return Collection|Tag[]
      */
-    public function getTestimonyType()
+    public function getTestimonyType(): Collection
     {
         return $this->testimonyType;
     }
 
-    /**
-     * @param mixed $testimonyType
-     */
-    public function setTestimonyType($testimonyType): void
+    public function addTTestimonyType(TestimonyType $type): self
     {
-        $this->testimonyType = $testimonyType;
+        if (!$this->testimonyType->contains($type)) {
+            $this->testimonyType[] = $type;
+        }
+        return $this;
+    }
+
+    public function removeTestimonyType(TestimonyType $type): self
+    {
+        if ($this->testimonyType->contains($type)) {
+            $this->testimonyType->removeElement($type);
+        }
+        return $this;
     }
 
     public function getTestimonyLabel() : string
     {
-        if ($this->testimonyType == self::TESTIMONY_TYPE_MAKER) {
-            return "Maker";
-        } elseif ($this->testimonyType == self::TESTIMONY_TYPE_COWORKER) {
-            return "Coworker";
-        } elseif ($this->testimonyType == self::TESTIMONY_TYPE_FORMATEUR) {
-            return "Formateur";
-        } elseif ($this->testimonyType == self::TESTIMONY_TYPE_IRREDUCTIBLE) {
-            return "Irreductible";
+        $testimonyTypes = '';
+        /**
+         * @var $testimonyType TestimonyType
+         */
+        foreach ($this->testimonyType as $testimonyType)
+        {
+            $testimonyTypes .= " <label>" . $testimonyType->getName() . "</label> ";
         }
 
-        return "nul";
+        return $testimonyTypes;
     }
 }

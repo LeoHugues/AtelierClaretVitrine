@@ -32,8 +32,10 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $testimonyType = $em->getRepository('App:TestimonyType')->find(2); // Irreductible
+
+
         $slides     = $em->getRepository('App:SlideContrib')->findBy(['published' => true], ['priority' => 'ASC']);
-        $testimony  = $em->getRepository('App:Testimony')->findBy(['testimonyType' => Testimony::TESTIMONY_TYPE_IRREDUCTIBLE]);
         $partner    = $em->getRepository('App:Partner')->findAll();
         $actus      = $em->getRepository('App:BlogArticle')->findLastNews();
 
@@ -51,7 +53,7 @@ class VitrineController extends Controller
         return $this->render('vitrine/home.html.twig', array(
             'actus'             => $actus,
             'slides'            => $slides,
-            'testimonies'       => $testimony,
+            'testimonies'       => $testimonyType->getTestimonies(),
             'partners'          => $partner,
             'newsletter_form'   => $form->createView()
         ));
@@ -87,7 +89,8 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $testimony  = $em->getRepository('App:Testimony')->findBy(['testimonyType' => Testimony::TESTIMONY_TYPE_COWORKER]);
+        $testimonyType = $em->getRepository('App:TestimonyType')->find(4); // Coworker
+
         $contrib    = $em->getRepository('App:CoworkingContrib')->findOneBy(['id' => 2]);
         $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(2, 3);
 
@@ -104,7 +107,7 @@ class VitrineController extends Controller
 
         return $this->render('vitrine/coworking.html.twig', array(
             'actus'         => $actus,
-            'testimonies'   => $testimony,
+            'testimonies'   => $testimonyType->getTestimonies(),
             'contrib'       => $contrib,
             'newsletter_form' => $form->createView()
         ));
@@ -118,7 +121,7 @@ class VitrineController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(2, 3);
-        $testimony  = $em->getRepository('App:Testimony')->findBy(['testimonyType' => Testimony::TESTIMONY_TYPE_MAKER]);
+        $testimonyType = $em->getRepository('App:TestimonyType')->find(3); // Maker
         $contrib    = $em->getRepository('App:FablabContrib')->findOneBy(['id' => 2]);
 
         $newsLetter = new NewsLetter();
@@ -134,7 +137,7 @@ class VitrineController extends Controller
 
         return $this->render('vitrine/fablab.html.twig', array(
             'actus'         => $actus,
-            'testimonies'   => $testimony,
+            'testimonies'   => $testimonyType->getTestimonies(),
             'contrib'       => $contrib,
             'newsletter_form' => $form->createView()
         ));
@@ -147,7 +150,7 @@ class VitrineController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $testimony  = $em->getRepository('App:Testimony')->findBy(['testimonyType' => Testimony::TESTIMONY_TYPE_FORMATEUR]);
+        $testimonyType = $em->getRepository('App:TestimonyType')->find(5); // Formateur
         $contrib    = $em->getRepository('App:FormationContrib')->findOneBy(['id' => 2]);
         $actus      = $em->getRepository('App:BlogArticle')->findArticleByTag(1, 3);
 
@@ -165,7 +168,7 @@ class VitrineController extends Controller
 
         return $this->render('vitrine/formation.html.twig', array(
             'actus'         => $actus,
-            'testimonies'   => $testimony,
+            'testimonies'   => $testimonyType->getTestimonies(),
             'contrib'       => $contrib,
             'newsletter_form' => $form->createView()
         ));

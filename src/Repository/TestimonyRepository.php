@@ -19,22 +19,17 @@ class TestimonyRepository extends ServiceEntityRepository
         parent::__construct($registry, Testimony::class);
     }
 
-    // /**
-    //  * @return Testimony[] Returns an array of Testimony objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByExampleField($testymonyType)
     {
+
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
+            ->andWhere(":type IN (t.testimonyType)")
+            ->setParameter('type', $testymonyType)
+            ->getQuery()->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Testimony
