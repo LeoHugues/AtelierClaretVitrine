@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.19, for Linux (x86_64)
 --
 -- Host: localhost    Database: atelierDeClaret
 -- ------------------------------------------------------
--- Server version	5.7.29-0ubuntu0.18.04.1
+-- Server version	8.0.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -19,7 +19,7 @@
 -- Current Database: `atelierDeClaret`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `atelierDeClaret` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `atelierDeClaret` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 USE `atelierDeClaret`;
 
@@ -29,13 +29,13 @@ USE `atelierDeClaret`;
 
 DROP TABLE IF EXISTS `blog_article`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `blog_article` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `text` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_date` datetime DEFAULT NULL,
-  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `filename` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -56,10 +56,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `blog_article_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `blog_article_tag` (
-  `blog_article_id` int(11) NOT NULL,
-  `tag_id` int(11) NOT NULL,
+  `blog_article_id` int NOT NULL,
+  `tag_id` int NOT NULL,
   PRIMARY KEY (`blog_article_id`,`tag_id`),
   KEY `IDX_48A608079452A475` (`blog_article_id`),
   KEY `IDX_48A60807BAD26311` (`tag_id`),
@@ -84,11 +84,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `blog_contrib`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `blog_contrib` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image_banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_banner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image_banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -109,16 +109,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ch_cookieconsent_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ch_cookieconsent_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cookie_consent_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cookie_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cookie_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cookie_consent_key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cookie_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cookie_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `timestamp` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `ch_cookieconsent_log` (
 
 LOCK TABLES `ch_cookieconsent_log` WRITE;
 /*!40000 ALTER TABLE `ch_cookieconsent_log` DISABLE KEYS */;
-INSERT INTO `ch_cookieconsent_log` VALUES (1,'127.0.0.x','5dbbfc5f85987','analytics','true','2019-11-01 10:35:27'),(2,'127.0.0.x','5dbbfc5f85987','social_media','false','2019-11-01 10:35:27'),(3,'127.0.0.x','5dcafcc064d92','analytics','true','2019-11-12 19:41:04'),(4,'127.0.0.x','5dcafcc064d92','social_media','true','2019-11-12 19:41:04'),(5,'127.0.0.x','5dcd295e6299e','analytics','true','2019-11-14 11:15:58'),(6,'127.0.0.x','5dcd295e6299e','social_media','true','2019-11-14 11:15:58'),(7,'127.0.0.x','5dd696a627b4a','analytics','false','2019-11-21 14:52:38'),(8,'127.0.0.x','5dd696a627b4a','social_media','false','2019-11-21 14:52:38'),(9,'127.0.0.x','5dde2174950c6','analytics','true','2019-11-27 08:10:44'),(10,'127.0.0.x','5dde2174950c6','social_media','true','2019-11-27 08:10:44'),(11,'127.0.0.x','5dde5b8fdec37','analytics','false','2019-11-27 12:18:39'),(12,'127.0.0.x','5dde5b8fdec37','social_media','false','2019-11-27 12:18:39'),(13,'127.0.0.x','5ddf749b47138','analytics','true','2019-11-28 08:17:47'),(14,'127.0.0.x','5ddf749b47138','social_media','true','2019-11-28 08:17:47'),(15,'127.0.0.x','5ddf77f2499ff','analytics','false','2019-11-28 08:32:02'),(16,'127.0.0.x','5ddf77f2499ff','social_media','false','2019-11-28 08:32:02'),(17,'127.0.0.x','5de252166b847','analytics','false','2019-11-30 12:27:18'),(18,'127.0.0.x','5de252166b847','social_media','false','2019-11-30 12:27:18'),(19,'127.0.0.x','5de4cb6b4c360','analytics','true','2019-12-02 09:29:31'),(20,'127.0.0.x','5de4cb6b4c360','social_media','true','2019-12-02 09:29:31'),(21,'127.0.0.x','5dee129e484de','analytics','true','2019-12-09 10:23:42'),(22,'127.0.0.x','5dee129e484de','social_media','true','2019-12-09 10:23:42'),(23,'127.0.0.x','5e09b466bea3d','analytics','false','2019-12-30 09:25:10'),(24,'127.0.0.x','5e09b466bea3d','social_media','false','2019-12-30 09:25:10'),(25,'127.0.0.x','5e09dc6b659c9','analytics','false','2019-12-30 12:15:55'),(26,'127.0.0.x','5e09dc6b659c9','social_media','false','2019-12-30 12:15:55'),(27,'127.0.0.x','5e1584529fe5a','analytics','false','2020-01-08 08:27:14'),(28,'127.0.0.x','5e1584529fe5a','social_media','false','2020-01-08 08:27:14'),(29,'127.0.0.x','5e172caf21d15','analytics','false','2020-01-09 14:37:51'),(30,'127.0.0.x','5e172caf21d15','social_media','false','2020-01-09 14:37:51'),(31,'127.0.0.x','5e1f2cb396ad8','analytics','true','2020-01-15 16:16:03'),(32,'127.0.0.x','5e1f2cb396ad8','social_media','false','2020-01-15 16:16:03'),(33,'127.0.0.x','5e25c7496ac69','analytics','false','2020-01-20 16:29:13'),(34,'127.0.0.x','5e25c7496ac69','social_media','false','2020-01-20 16:29:13'),(35,'127.0.0.x','5e25dc096796f','analytics','false','2020-01-20 17:57:45'),(36,'127.0.0.x','5e25dc096796f','social_media','false','2020-01-20 17:57:45'),(37,'127.0.0.x','5e35290599aac','analytics','false','2020-02-01 08:30:13'),(38,'127.0.0.x','5e35290599aac','social_media','false','2020-02-01 08:30:13'),(39,'127.0.0.x','5e3bcb6659346','analytics','false','2020-02-06 09:16:38'),(40,'127.0.0.x','5e3bcb6659346','social_media','false','2020-02-06 09:16:38'),(41,'127.0.0.x','5e4a5d9ebeecf','analytics','false','2020-02-17 10:32:14'),(42,'127.0.0.x','5e4a5d9ebeecf','social_media','false','2020-02-17 10:32:14'),(43,'127.0.0.x','5e4a8c5f7063a','analytics','false','2020-02-17 13:51:43'),(44,'127.0.0.x','5e4a8c5f7063a','social_media','false','2020-02-17 13:51:43'),(45,'127.0.0.x','5e4baa9e9ffd0','analytics','true','2020-02-18 10:13:02'),(46,'127.0.0.x','5e4baa9e9ffd0','social_media','true','2020-02-18 10:13:02'),(47,'127.0.0.x','5e4c4c7ce9e03','analytics','false','2020-02-18 21:43:40'),(48,'127.0.0.x','5e4c4c7ce9e03','social_media','false','2020-02-18 21:43:40'),(49,'127.0.0.x','5e50092c29c0f','analytics','false','2020-02-21 17:45:32'),(50,'127.0.0.x','5e50092c29c0f','social_media','false','2020-02-21 17:45:32'),(51,'127.0.0.x','5e54059377f56','analytics','false','2020-02-24 18:19:15'),(52,'127.0.0.x','5e54059377f56','social_media','false','2020-02-24 18:19:15'),(53,'127.0.0.x','5e562d13789f0','analytics','true','2020-02-26 09:32:19'),(54,'127.0.0.x','5e562d13789f0','social_media','true','2020-02-26 09:32:19'),(55,'127.0.0.x','5e5bef9c882b2','analytics','false','2020-03-01 18:23:40'),(56,'127.0.0.x','5e5bef9c882b2','social_media','false','2020-03-01 18:23:40'),(57,'127.0.0.x','5e5e32a4e0ff6','analytics','true','2020-03-03 11:34:12'),(58,'127.0.0.x','5e5e32a4e0ff6','social_media','true','2020-03-03 11:34:12'),(59,'127.0.0.x','5e5e5ca01d903','analytics','true','2020-03-03 14:33:20'),(60,'127.0.0.x','5e5e5ca01d903','social_media','false','2020-03-03 14:33:20'),(61,'127.0.0.x','5e5e5f0990177','analytics','true','2020-03-03 14:43:37'),(62,'127.0.0.x','5e5e5f0990177','social_media','false','2020-03-03 14:43:37'),(63,'127.0.0.x','5e5e6a2f49387','analytics','false','2020-03-03 15:31:11'),(64,'127.0.0.x','5e5e6a2f49387','social_media','false','2020-03-03 15:31:11'),(65,'127.0.0.x','5e5e7576a275e','analytics','false','2020-03-03 16:19:18'),(66,'127.0.0.x','5e5e7576a275e','social_media','false','2020-03-03 16:19:18'),(67,'127.0.0.x','5e5f411db2ace','analytics','false','2020-03-04 06:48:13'),(68,'127.0.0.x','5e5f411db2ace','social_media','false','2020-03-04 06:48:13'),(69,'127.0.0.x','5e5f9ba4c166d','analytics','false','2020-03-04 13:14:28'),(70,'127.0.0.x','5e5f9ba4c166d','social_media','false','2020-03-04 13:14:28'),(71,'127.0.0.x','5e5fa900d73bd','analytics','false','2020-03-04 14:11:28'),(72,'127.0.0.x','5e5fa900d73bd','social_media','false','2020-03-04 14:11:28'),(73,'127.0.0.x','5e5fe37215433','analytics','true','2020-03-04 18:20:50'),(74,'127.0.0.x','5e5fe37215433','social_media','true','2020-03-04 18:20:50'),(75,'127.0.0.x','5e6129e389add','analytics','true','2020-03-05 17:33:39'),(76,'127.0.0.x','5e6129e389add','social_media','true','2020-03-05 17:33:39'),(77,'127.0.0.x','5e613d7b21da4','analytics','false','2020-03-05 18:57:15'),(78,'127.0.0.x','5e613d7b21da4','social_media','false','2020-03-05 18:57:15'),(79,'127.0.0.x','5e6220891ea40','analytics','false','2020-03-06 11:06:01'),(80,'127.0.0.x','5e6220891ea40','social_media','false','2020-03-06 11:06:01'),(81,'127.0.0.x','5e63e1735e39d','analytics','false','2020-03-07 19:01:23'),(82,'127.0.0.x','5e63e1735e39d','social_media','false','2020-03-07 19:01:23'),(83,'127.0.0.x','5e6617b84ddf0','analytics','false','2020-03-09 11:17:28'),(84,'127.0.0.x','5e6617b84ddf0','social_media','false','2020-03-09 11:17:28'),(85,'127.0.0.x','5e6617b88e880','analytics','false','2020-03-09 11:17:28'),(86,'127.0.0.x','5e6617b88e880','social_media','false','2020-03-09 11:17:28'),(87,'127.0.0.x','5e661ed50bc79','analytics','false','2020-03-09 11:47:49'),(88,'127.0.0.x','5e661ed50bc79','social_media','false','2020-03-09 11:47:49');
+INSERT INTO `ch_cookieconsent_log` VALUES (1,'127.0.0.x','5dbbfc5f85987','analytics','true','2019-11-01 10:35:27'),(2,'127.0.0.x','5dbbfc5f85987','social_media','false','2019-11-01 10:35:27'),(3,'127.0.0.x','5dcafcc064d92','analytics','true','2019-11-12 19:41:04'),(4,'127.0.0.x','5dcafcc064d92','social_media','true','2019-11-12 19:41:04'),(5,'127.0.0.x','5dcd295e6299e','analytics','true','2019-11-14 11:15:58'),(6,'127.0.0.x','5dcd295e6299e','social_media','true','2019-11-14 11:15:58'),(7,'127.0.0.x','5dd696a627b4a','analytics','false','2019-11-21 14:52:38'),(8,'127.0.0.x','5dd696a627b4a','social_media','false','2019-11-21 14:52:38'),(9,'127.0.0.x','5dde2174950c6','analytics','true','2019-11-27 08:10:44'),(10,'127.0.0.x','5dde2174950c6','social_media','true','2019-11-27 08:10:44'),(11,'127.0.0.x','5dde5b8fdec37','analytics','false','2019-11-27 12:18:39'),(12,'127.0.0.x','5dde5b8fdec37','social_media','false','2019-11-27 12:18:39'),(13,'127.0.0.x','5ddf749b47138','analytics','true','2019-11-28 08:17:47'),(14,'127.0.0.x','5ddf749b47138','social_media','true','2019-11-28 08:17:47'),(15,'127.0.0.x','5ddf77f2499ff','analytics','false','2019-11-28 08:32:02'),(16,'127.0.0.x','5ddf77f2499ff','social_media','false','2019-11-28 08:32:02'),(17,'127.0.0.x','5de252166b847','analytics','false','2019-11-30 12:27:18'),(18,'127.0.0.x','5de252166b847','social_media','false','2019-11-30 12:27:18'),(19,'127.0.0.x','5de4cb6b4c360','analytics','true','2019-12-02 09:29:31'),(20,'127.0.0.x','5de4cb6b4c360','social_media','true','2019-12-02 09:29:31'),(21,'127.0.0.x','5dee129e484de','analytics','true','2019-12-09 10:23:42'),(22,'127.0.0.x','5dee129e484de','social_media','true','2019-12-09 10:23:42'),(23,'127.0.0.x','5e09b466bea3d','analytics','false','2019-12-30 09:25:10'),(24,'127.0.0.x','5e09b466bea3d','social_media','false','2019-12-30 09:25:10'),(25,'127.0.0.x','5e09dc6b659c9','analytics','false','2019-12-30 12:15:55'),(26,'127.0.0.x','5e09dc6b659c9','social_media','false','2019-12-30 12:15:55'),(27,'127.0.0.x','5e1584529fe5a','analytics','false','2020-01-08 08:27:14'),(28,'127.0.0.x','5e1584529fe5a','social_media','false','2020-01-08 08:27:14'),(29,'127.0.0.x','5e172caf21d15','analytics','false','2020-01-09 14:37:51'),(30,'127.0.0.x','5e172caf21d15','social_media','false','2020-01-09 14:37:51'),(31,'127.0.0.x','5e1f2cb396ad8','analytics','true','2020-01-15 16:16:03'),(32,'127.0.0.x','5e1f2cb396ad8','social_media','false','2020-01-15 16:16:03'),(33,'127.0.0.x','5e25c7496ac69','analytics','false','2020-01-20 16:29:13'),(34,'127.0.0.x','5e25c7496ac69','social_media','false','2020-01-20 16:29:13'),(35,'127.0.0.x','5e25dc096796f','analytics','false','2020-01-20 17:57:45'),(36,'127.0.0.x','5e25dc096796f','social_media','false','2020-01-20 17:57:45'),(37,'127.0.0.x','5e35290599aac','analytics','false','2020-02-01 08:30:13'),(38,'127.0.0.x','5e35290599aac','social_media','false','2020-02-01 08:30:13'),(39,'127.0.0.x','5e3bcb6659346','analytics','false','2020-02-06 09:16:38'),(40,'127.0.0.x','5e3bcb6659346','social_media','false','2020-02-06 09:16:38'),(41,'127.0.0.x','5e4a5d9ebeecf','analytics','false','2020-02-17 10:32:14'),(42,'127.0.0.x','5e4a5d9ebeecf','social_media','false','2020-02-17 10:32:14'),(43,'127.0.0.x','5e4a8c5f7063a','analytics','false','2020-02-17 13:51:43'),(44,'127.0.0.x','5e4a8c5f7063a','social_media','false','2020-02-17 13:51:43'),(45,'127.0.0.x','5e4baa9e9ffd0','analytics','true','2020-02-18 10:13:02'),(46,'127.0.0.x','5e4baa9e9ffd0','social_media','true','2020-02-18 10:13:02'),(47,'127.0.0.x','5e4c4c7ce9e03','analytics','false','2020-02-18 21:43:40'),(48,'127.0.0.x','5e4c4c7ce9e03','social_media','false','2020-02-18 21:43:40'),(49,'127.0.0.x','5e50092c29c0f','analytics','false','2020-02-21 17:45:32'),(50,'127.0.0.x','5e50092c29c0f','social_media','false','2020-02-21 17:45:32'),(51,'127.0.0.x','5e54059377f56','analytics','false','2020-02-24 18:19:15'),(52,'127.0.0.x','5e54059377f56','social_media','false','2020-02-24 18:19:15'),(53,'127.0.0.x','5e562d13789f0','analytics','true','2020-02-26 09:32:19'),(54,'127.0.0.x','5e562d13789f0','social_media','true','2020-02-26 09:32:19'),(55,'127.0.0.x','5e5bef9c882b2','analytics','false','2020-03-01 18:23:40'),(56,'127.0.0.x','5e5bef9c882b2','social_media','false','2020-03-01 18:23:40'),(57,'127.0.0.x','5e5e32a4e0ff6','analytics','true','2020-03-03 11:34:12'),(58,'127.0.0.x','5e5e32a4e0ff6','social_media','true','2020-03-03 11:34:12'),(59,'127.0.0.x','5e5e5ca01d903','analytics','true','2020-03-03 14:33:20'),(60,'127.0.0.x','5e5e5ca01d903','social_media','false','2020-03-03 14:33:20'),(61,'127.0.0.x','5e5e5f0990177','analytics','true','2020-03-03 14:43:37'),(62,'127.0.0.x','5e5e5f0990177','social_media','false','2020-03-03 14:43:37'),(63,'127.0.0.x','5e5e6a2f49387','analytics','false','2020-03-03 15:31:11'),(64,'127.0.0.x','5e5e6a2f49387','social_media','false','2020-03-03 15:31:11'),(65,'127.0.0.x','5e5e7576a275e','analytics','false','2020-03-03 16:19:18'),(66,'127.0.0.x','5e5e7576a275e','social_media','false','2020-03-03 16:19:18'),(67,'127.0.0.x','5e5f411db2ace','analytics','false','2020-03-04 06:48:13'),(68,'127.0.0.x','5e5f411db2ace','social_media','false','2020-03-04 06:48:13'),(69,'127.0.0.x','5e5f9ba4c166d','analytics','false','2020-03-04 13:14:28'),(70,'127.0.0.x','5e5f9ba4c166d','social_media','false','2020-03-04 13:14:28'),(71,'127.0.0.x','5e5fa900d73bd','analytics','false','2020-03-04 14:11:28'),(72,'127.0.0.x','5e5fa900d73bd','social_media','false','2020-03-04 14:11:28'),(73,'127.0.0.x','5e5fe37215433','analytics','true','2020-03-04 18:20:50'),(74,'127.0.0.x','5e5fe37215433','social_media','true','2020-03-04 18:20:50'),(75,'127.0.0.x','5e6129e389add','analytics','true','2020-03-05 17:33:39'),(76,'127.0.0.x','5e6129e389add','social_media','true','2020-03-05 17:33:39'),(77,'127.0.0.x','5e613d7b21da4','analytics','false','2020-03-05 18:57:15'),(78,'127.0.0.x','5e613d7b21da4','social_media','false','2020-03-05 18:57:15'),(79,'127.0.0.x','5e6220891ea40','analytics','false','2020-03-06 11:06:01'),(80,'127.0.0.x','5e6220891ea40','social_media','false','2020-03-06 11:06:01'),(81,'127.0.0.x','5e63e1735e39d','analytics','false','2020-03-07 19:01:23'),(82,'127.0.0.x','5e63e1735e39d','social_media','false','2020-03-07 19:01:23'),(83,'127.0.0.x','5e6617b84ddf0','analytics','false','2020-03-09 11:17:28'),(84,'127.0.0.x','5e6617b84ddf0','social_media','false','2020-03-09 11:17:28'),(85,'127.0.0.x','5e6617b88e880','analytics','false','2020-03-09 11:17:28'),(86,'127.0.0.x','5e6617b88e880','social_media','false','2020-03-09 11:17:28'),(87,'127.0.0.x','5e661ed50bc79','analytics','false','2020-03-09 11:47:49'),(88,'127.0.0.x','5e661ed50bc79','social_media','false','2020-03-09 11:47:49'),(89,'127.0.0.x','5e677dd3d2dee','analytics','true','2020-03-10 12:45:23'),(90,'127.0.0.x','5e677dd3d2dee','social_media','true','2020-03-10 12:45:23');
 /*!40000 ALTER TABLE `ch_cookieconsent_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,13 +137,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `contact`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -164,26 +164,26 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `coworking_contrib`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `coworking_contrib` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_pres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_pres` longtext COLLATE utf8mb4_unicode_ci,
-  `image_keynumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber1` int(11) DEFAULT NULL,
-  `label_keynumber1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber2` int(11) DEFAULT NULL,
-  `label_keynumber2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber3` int(11) DEFAULT NULL,
-  `label_keynumber3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber4` int(11) DEFAULT NULL,
-  `label_keynumber4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_tarif` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tarifs` longtext COLLATE utf8mb4_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image_header` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_header` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_video` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_pres` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text_pres` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_keynumber` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber1` int DEFAULT NULL,
+  `label_keynumber1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber2` int DEFAULT NULL,
+  `label_keynumber2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber3` int DEFAULT NULL,
+  `label_keynumber3` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber4` int DEFAULT NULL,
+  `label_keynumber4` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_tarif` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tarifs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -204,26 +204,26 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `fablab_contrib`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fablab_contrib` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_pres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_pres` longtext COLLATE utf8mb4_unicode_ci,
-  `image_keynumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber1` int(11) DEFAULT NULL,
-  `label_keynumber1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber2` int(11) DEFAULT NULL,
-  `label_keynumber2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber3` int(11) DEFAULT NULL,
-  `label_keynumber3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber4` int(11) DEFAULT NULL,
-  `label_keynumber4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_tarif` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tarifs` longtext COLLATE utf8mb4_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image_header` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_header` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_video` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_pres` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text_pres` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_keynumber` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber1` int DEFAULT NULL,
+  `label_keynumber1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber2` int DEFAULT NULL,
+  `label_keynumber2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber3` int DEFAULT NULL,
+  `label_keynumber3` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber4` int DEFAULT NULL,
+  `label_keynumber4` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_tarif` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tarifs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -244,24 +244,24 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `formation_contrib`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `formation_contrib` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_pres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_pres` longtext COLLATE utf8mb4_unicode_ci,
-  `image_keynumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber1` int(11) DEFAULT NULL,
-  `label_keynumber1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber2` int(11) DEFAULT NULL,
-  `label_keynumber2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber3` int(11) DEFAULT NULL,
-  `label_keynumber3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keynumber4` int(11) DEFAULT NULL,
-  `label_keynumber4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image_header` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_header` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_video` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_pres` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text_pres` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_keynumber` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber1` int DEFAULT NULL,
+  `label_keynumber1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber2` int DEFAULT NULL,
+  `label_keynumber2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber3` int DEFAULT NULL,
+  `label_keynumber3` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keynumber4` int DEFAULT NULL,
+  `label_keynumber4` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -282,9 +282,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `migration_versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `migration_versions` (
-  `version` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `executed_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)',
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -296,7 +296,7 @@ CREATE TABLE `migration_versions` (
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20190924143901','2019-09-24 14:46:10'),('20190926111331','2019-09-26 11:13:48'),('20190927142254','2019-09-27 14:24:32'),('20190927153242','2019-09-27 15:32:49'),('20190927161604','2019-09-27 16:16:12'),('20191002111919','2019-10-02 11:19:37'),('20191002132530','2019-10-02 13:25:44'),('20191011142644','2019-10-11 14:26:59'),('20191012083000','2019-10-12 08:30:17'),('20191012084859','2019-10-12 08:49:28'),('20191030131455','2019-10-30 13:16:02'),('20191101102819','2019-11-01 10:28:42'),('20191101104239','2019-11-01 10:43:20'),('20191105144750','2019-11-05 14:48:04'),('20191106133952','2019-11-06 13:40:00'),('20191107101831','2019-11-07 10:18:46'),('20191107202143','2019-11-07 20:21:51');
+INSERT INTO `migration_versions` VALUES ('20190924143901','2019-09-24 14:46:10'),('20190926111331','2019-09-26 11:13:48'),('20190927142254','2019-09-27 14:24:32'),('20190927153242','2019-09-27 15:32:49'),('20190927161604','2019-09-27 16:16:12'),('20191002111919','2019-10-02 11:19:37'),('20191002132530','2019-10-02 13:25:44'),('20191011142644','2019-10-11 14:26:59'),('20191012083000','2019-10-12 08:30:17'),('20191012084859','2019-10-12 08:49:28'),('20191030131455','2019-10-30 13:16:02'),('20191101102819','2019-11-01 10:28:42'),('20191101104239','2019-11-01 10:43:20'),('20191105144750','2019-11-05 14:48:04'),('20191106133952','2019-11-06 13:40:00'),('20191107101831','2019-11-07 10:18:46'),('20191107202143','2019-11-07 20:21:51'),('20200603151718','2020-06-03 15:17:58'),('20200603164310','2020-06-03 16:43:40');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,10 +306,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `news_letter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `news_letter` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -330,11 +330,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `partner`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `partner` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -355,15 +355,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `slide_contrib`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `slide_contrib` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `legend` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `priority` int(11) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `legend` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `priority` int DEFAULT NULL,
   `published` tinyint(1) DEFAULT NULL,
-  `button` longtext COLLATE utf8mb4_unicode_ci,
+  `button` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -384,10 +384,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tag` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -408,16 +408,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `testimony`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `testimony` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `testimony_type` int(11) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -426,8 +425,60 @@ CREATE TABLE `testimony` (
 
 LOCK TABLES `testimony` WRITE;
 /*!40000 ALTER TABLE `testimony` DISABLE KEYS */;
-INSERT INTO `testimony` VALUES (1,'Fabrice VERGEZ','Géomètre','La victoire est brillante. L\'échec est mat. Coluche','/userfiles/contrib/home/testimony/bitmap.png',0),(2,'Jaque C','Peintre','Lorem ipsum dolor','/userfiles/contrib/home/testimony/person_4.jpg',0),(3,'Mahajere RAJAOFETRA','Concepteur industriel','...sinon rien','/userfiles/contrib/LOGO%20LZR.jpg',0),(5,'Yves C','Écrivain - père au foyer','Créons l\'avenir ensemble','/userfiles/contrib/home/testimony/avatar-yves.JPG',3);
+INSERT INTO `testimony` VALUES (1,'Fabrice VERGEZ','Géomètre','La victoire est brillante. L\'échec est mat. Coluche','/userfiles/contrib/home/testimony/bitmap.png'),(2,'Jaque C','Peintre','Lorem ipsum dolor','/userfiles/contrib/home/testimony/person_4.jpg'),(3,'Mahajere RAJAOFETRA','Concepteur industriel','...sinon rien','/userfiles/contrib/LOGO%20LZR.jpg'),(5,'Yves C','Écrivain - père au foyer','Créons l\'avenir ensemble','/userfiles/contrib/home/testimony/avatar-yves.JPG'),(9,'Léo Hugues','Coder / Maker','La seule limite, c\'est l\'imagination','/userfiles/contrib/Images/zoig.jpg');
 /*!40000 ALTER TABLE `testimony` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `testimony_testimony_type`
+--
+
+DROP TABLE IF EXISTS `testimony_testimony_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `testimony_testimony_type` (
+  `testimony_id` int NOT NULL,
+  `testimony_type_id` int NOT NULL,
+  PRIMARY KEY (`testimony_id`,`testimony_type_id`),
+  KEY `IDX_FDF2709DB879FBFE` (`testimony_id`),
+  KEY `IDX_FDF2709DC216E87F` (`testimony_type_id`),
+  CONSTRAINT `FK_FDF2709DB879FBFE` FOREIGN KEY (`testimony_id`) REFERENCES `testimony` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_FDF2709DC216E87F` FOREIGN KEY (`testimony_type_id`) REFERENCES `testimony_type` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testimony_testimony_type`
+--
+
+LOCK TABLES `testimony_testimony_type` WRITE;
+/*!40000 ALTER TABLE `testimony_testimony_type` DISABLE KEYS */;
+INSERT INTO `testimony_testimony_type` VALUES (1,2),(1,5),(2,2),(2,4),(3,2),(3,3),(5,2),(5,3),(5,4),(5,5),(9,3);
+/*!40000 ALTER TABLE `testimony_testimony_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `testimony_type`
+--
+
+DROP TABLE IF EXISTS `testimony_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `testimony_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testimony_type`
+--
+
+LOCK TABLES `testimony_type` WRITE;
+/*!40000 ALTER TABLE `testimony_type` DISABLE KEYS */;
+INSERT INTO `testimony_type` VALUES (2,'Irreductible'),(3,'Maker'),(4,'Coworker'),(5,'Formateur');
+/*!40000 ALTER TABLE `testimony_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -436,12 +487,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `roles` json NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -466,4 +517,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-10 12:31:23
+-- Dump completed on 2020-06-05 14:46:06

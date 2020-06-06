@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e03443e1-1fc3-4787-bc6f-b6d7bfe6c055" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/VitrineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VitrineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Testimony.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Testimony.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TestimonyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TestimonyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelierDeClaret.sql" beforeDir="false" afterPath="$PROJECT_DIR$/atelierDeClaret.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +284,8 @@
       <workItem from="1583842944365" duration="17283000" />
       <workItem from="1583950069124" duration="5276000" />
       <workItem from="1591196863378" duration="7730000" />
-      <workItem from="1591357440503" duration="610000" />
+      <workItem from="1591357440503" duration="3066000" />
+      <workItem from="1591431099279" duration="607000" />
     </task>
     <servers />
   </component>
@@ -330,11 +328,11 @@
     </state>
     <state x="0" y="200" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583950463554" />
     <state x="0" y="200" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1591203069518" />
-    <state x="643" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1591357443573">
+    <state x="643" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1591431105006">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="643" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583950077202" />
-    <state x="643" y="346" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1591357443573" />
+    <state x="643" y="346" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1591431105006" />
     <state x="624" y="238" width="672" height="677" key="run.anything.popup" timestamp="1583949904295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
