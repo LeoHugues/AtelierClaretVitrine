@@ -10020,6 +10020,10 @@ textarea.form-control {
   background-size: contain;
 }
 
+.testimony-wrap .machine-img {
+  height: 200px;
+}
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
